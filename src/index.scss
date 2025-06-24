@@ -1,0 +1,284 @@
+@use "./variables.scss" as *;
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+body {
+  margin: 0;
+  background-color: $body-bg-color;
+}
+
+header {
+  background-color: $header-bg-color;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+//Header
+.header-content,
+.title-main,
+.contacts {
+  display: flex;
+  align-items: center;
+}
+
+.header-content {
+  justify-content: space-between;
+  color: $color-primary-light;
+  font-family: $primary-title-font;
+
+  .title-main {
+    flex-direction: column;
+    align-items: start;
+    * {
+      margin: 0;
+      font-size: 25px;
+    }
+    h1 {
+      font-size: 40px;
+    }
+  }
+
+  .contacts {
+    gap: 6px;
+    a {
+      text-decoration: none;
+      color: $color-primary-light;
+      font-size: 20px;
+
+      img {
+        max-width: 40px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+//Section Search
+
+.search {
+  background-color: $body-bg-color;
+}
+
+.search-content {
+  display: flex;
+  padding: 15px 0;
+
+  * {
+    max-height: 45px;
+  }
+
+  img {
+    max-width: 35px;
+  }
+
+  button {
+    background-color: $body-bg-color;
+    margin-left: auto;
+  }
+
+  .search-input {
+    width: 70%;
+    display: flex;
+
+    input,
+    button {
+      background-color: rgb(21, 21, 21);
+      padding: 20px 15px 20px 10px;
+    }
+
+    input {
+      width: 100%;
+      font-family: $roboto-font;
+      padding: 5px 20px 5px 20px;
+      outline: none;
+      color: $color-primary-light;
+      border-radius: 20px 0 0 20px;
+      border: 1px solid $color-primary-light;
+      border-right: none;
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      border-radius: 0 20px 20px 0;
+      border: 1px solid $color-primary-light;
+      border-left: none;
+
+      img {
+        max-width: 25px;
+      }
+    }
+  }
+}
+
+//Section Slider
+.slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0 50px 0;
+
+  button {
+    background-color: #808792;
+    opacity: 50%;
+    margin: 0 20px;
+    border-radius: 7px;
+    img {
+      width: 40px;
+    }
+  }
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: none;
+
+  //Description On Slide
+  .product-title {
+    max-width: 350px;
+    font-family: $roboto-font;
+    margin-right: 20px;
+    h2 {
+      margin: 0;
+      font-size: 25px;
+      font-weight: 600;
+      color: $color-primary-light;
+      font-family: $primary-title-font;
+    }
+
+    p {
+      color: $color-primary-light;
+      margin-top: 5px;
+      font-size: 15px;
+    }
+  }
+
+  //Img On Slide
+  .img-wrapper {
+    align-self: center;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 25px;
+
+    img {
+      max-height: 370px;
+      display: block;
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 25px 12px rgba(255, 255, 255, 0.45));
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -25px;
+      left: 10%;
+      width: 80%;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+      filter: blur(15px);
+      z-index: 1;
+      transform: translateX(0);
+    }
+  }
+
+  //Macros On Slide
+  .macros-ammount {
+    margin-left: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 6px;
+    h2 {
+      font-family: $roboto-font;
+      font-weight: 300;
+      margin: 0;
+      color: $color-primary-light;
+    }
+  }
+}
+
+//BG Colors
+.dark-red,
+.dark-green,
+.light-blue {
+  background-color: rgba(78, 15, 9, 0.973);
+
+  .inner {
+    background: none, rgba(102, 25, 18, 0.973);
+  }
+  .numb {
+    color: $color-primary-light;
+  }
+
+  .progress,
+  .dot span,
+  .zero-dot span {
+    background: #f55b02;
+  }
+}
+.dark-green {
+  background-color: rgb(35, 107, 42);
+  .inner {
+    background: none, #236b2a;
+  }
+
+  .progress,
+  .dot span,
+  .zero-dot span {
+    background: #05ec6d;
+  }
+}
+
+.light-blue {
+  background-color: #3f5f91;
+  .inner {
+    background: none, #3f5f91;
+  }
+
+  .progress,
+  .dot span,
+  .zero-dot span {
+    background: #0b407c;
+  }
+}
+
+//Circular progress bar
+
+.progress-bar {
+  @extend %progress-bar-template;
+}
+
+// === 5,6% ===
+.progress-6,
+.progress-5 {
+  @extend %progress-5-6;
+}
+
+// === 10% ===
+.progress-10 {
+  @extend %progress-10;
+}
+
+// === 13% ===
+.progress-13 {
+  @extend %progress-13;
+}
+
+// === 30% ===
+.progress-30 {
+  @extend %progress-30;
+}
+
+// === 40% ===
+.progress-40 {
+  @extend %progress-40;
+}

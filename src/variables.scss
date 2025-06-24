@@ -1,0 +1,368 @@
+//Links
+@import "https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+//Fonts
+$primary-title-font: "Rajdhani", sans-serif;
+$roboto-font: "Roboto", sans-serif;
+
+//Colors
+$header-bg-color: #0a0a0a;
+$body-bg-color: rgb(12, 12, 12);
+$color-primary-light: rgb(231, 224, 224);
+
+//templates
+%progress-bar-template {
+  font-family: $roboto-font;
+
+  * {
+    text-align: center;
+  }
+
+  .circular {
+    height: 100px;
+    width: 100px;
+    position: relative;
+  }
+
+  .inner,
+  .outer,
+  .circle {
+    position: absolute;
+    z-index: 6;
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+  }
+  .inner {
+    top: 50%;
+    left: 50%;
+    height: 80px;
+    width: 80px;
+    margin: -40px 0 0 -40px;
+    border-radius: 100%;
+  }
+  .circle {
+    z-index: 1;
+    box-shadow: none;
+  }
+  .numb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .numb-title {
+    font-size: 12px;
+  }
+  .bar {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -webkit-border-radius: 100%;
+    clip: rect(0px, 100px, 100px, 50px);
+  }
+  .progress {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -webkit-border-radius: 100%;
+    clip: rect(0px, 50px, 100px, 0px);
+  }
+
+  .left.progress {
+    z-index: 1;
+    animation: left 1s linear both;
+  }
+  @keyframes left {
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+
+  .bar.right {
+    z-index: 3;
+    transform: rotate(180deg);
+  }
+  .right.progress {
+    animation: right 1s linear both;
+    animation-delay: 1s;
+  }
+  @keyframes right {
+    100% {
+      transform: rotate(135deg);
+    }
+  }
+
+  .dot {
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 50%;
+    height: 10px;
+    margin-top: -5px;
+    animation: dot 2s linear both;
+    transform-origin: 0% 50%;
+  }
+  .zero-dot {
+    z-index: 100;
+    position: absolute;
+    top: 5px;
+    left: 55%;
+    height: 10px;
+    margin-top: -5px;
+    transform-origin: 0% 50%;
+  }
+  .zero-dot span,
+  .dot span {
+    position: absolute;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+  }
+
+  @keyframes dot {
+    0% {
+      transform: rotate(-90deg);
+    }
+    50% {
+      transform: rotate(90deg);
+      z-index: 4;
+    }
+    100% {
+      transform: rotate(225deg);
+      z-index: 4;
+    }
+  }
+}
+
+.progress-82,
+.progress-80 {
+  @extend %progress-bar-template;
+
+  .left.progress {
+    animation: left-82 1s linear forwards;
+  }
+
+  .right.progress {
+    animation: right-82 1s linear forwards;
+    animation-delay: 1s;
+  }
+
+  .dot {
+    animation: dot-82 2s linear forwards;
+  }
+
+  @keyframes left-82 {
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+
+  @keyframes right-82 {
+    100% {
+      transform: rotate(115.2deg); // (82 - 50) * 3.6
+    }
+  }
+
+  @keyframes dot-82 {
+    0% {
+      transform: rotate(-90deg);
+    }
+    50% {
+      transform: rotate(90deg);
+      z-index: 4;
+    }
+    100% {
+      transform: rotate(205.2deg);
+      z-index: 4;
+    }
+  }
+}
+
+//PROGRESS PERCENTS
+
+//5-6%
+%progress-5-6 {
+  @extend %progress-bar-template;
+  .left.progress {
+    display: none;
+  }
+
+  .bar.right {
+    transform: rotate(0deg);
+  }
+
+  .right.progress {
+    animation: rotate-right-6 1s linear forwards;
+  }
+
+  .dot {
+    animation: rotate-dot-6 1s linear forwards;
+  }
+
+  @keyframes rotate-right-6 {
+    100% {
+      transform: rotate(21.6deg);
+    }
+  }
+
+  @keyframes rotate-dot-6 {
+    0% {
+      transform: rotate(-90deg);
+    }
+    100% {
+      transform: rotate(-68.4deg);
+    }
+  }
+}
+
+//10%
+%progress-10 {
+  @extend %progress-bar-template;
+
+  .left.progress {
+    display: none;
+  }
+
+  .bar.right {
+    transform: rotate(0deg);
+  }
+
+  .right.progress {
+    animation: rotate-right-10 1s linear forwards;
+  }
+
+  .dot {
+    animation: rotate-dot-10 1s linear forwards;
+  }
+
+  @keyframes rotate-right-10 {
+    100% {
+      transform: rotate(36deg);
+    }
+  }
+
+  @keyframes rotate-dot-10 {
+    0% {
+      transform: rotate(-90deg);
+    }
+    100% {
+      transform: rotate(-54deg);
+    }
+  }
+}
+
+//13%
+%progress-13 {
+  @extend %progress-bar-template;
+
+  .left.progress {
+    display: none;
+  }
+
+  .bar.right {
+    transform: rotate(0deg);
+  }
+
+  .right.progress {
+    animation: rotate-right-13 1s linear forwards;
+  }
+
+  .dot {
+    animation: rotate-dot-13 1s linear forwards;
+  }
+
+  @keyframes rotate-right-13 {
+    100% {
+      transform: rotate(46.8deg);
+    }
+  }
+
+  @keyframes rotate-dot-13 {
+    0% {
+      transform: rotate(-90deg);
+    }
+    100% {
+      transform: rotate(-43.2deg);
+    }
+  }
+}
+
+//30%
+%progress-30 {
+  @extend %progress-bar-template;
+
+  .left.progress {
+    display: none;
+  }
+
+  .bar.right {
+    transform: rotate(0deg);
+  }
+
+  .right.progress {
+    animation: rotate-right-30 1s linear forwards;
+  }
+
+  .dot {
+    animation: rotate-dot-30 1s linear forwards;
+  }
+
+  @keyframes rotate-right-30 {
+    100% {
+      transform: rotate(108deg);
+    }
+  }
+
+  @keyframes rotate-dot-30 {
+    0% {
+      transform: rotate(-90deg);
+    }
+    100% {
+      transform: rotate(18deg);
+    }
+  }
+}
+
+//40%
+
+%progress-40 {
+  @extend %progress-bar-template;
+
+  .left.progress {
+    display: none;
+  }
+
+  .bar.right {
+    transform: rotate(0deg);
+  }
+
+  .right.progress {
+    animation: rotate-right-40 1s linear forwards;
+  }
+
+  .dot {
+    animation: rotate-dot-40 1s linear forwards;
+  }
+
+  @keyframes rotate-right-40 {
+    100% {
+      transform: rotate(144deg);
+    }
+  }
+
+  @keyframes rotate-dot-40 {
+    0% {
+      transform: rotate(-90deg);
+    }
+    100% {
+      transform: rotate(54deg);
+    }
+  }
+}
