@@ -282,6 +282,29 @@ button {
   @extend %progress-40;
 }
 
+// Our advantages
+.advantages-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+
+  .advantage-card {
+    display: flex;
+    align-items: center;
+    img {
+      max-width: 50px;
+    }
+  }
+
+  h3,
+  h4 {
+    font-family: $primary-title-font;
+    font-weight: 500;
+    margin: 0;
+    color: $color-primary-light;
+  }
+}
+
 //Categories cards
 .categories {
   color: $color-primary-light;
@@ -351,6 +374,7 @@ button {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     .product-card {
+      cursor: pointer;
       h4 {
         font-weight: 300;
       }
@@ -383,6 +407,10 @@ button {
             max-width: 35px;
             background: none;
           }
+        }
+
+        button:hover {
+          background: orangered;
         }
       }
 

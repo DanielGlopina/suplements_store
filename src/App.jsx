@@ -10,14 +10,16 @@ import productCardsData from "./productsCardData";
 
 function App() {
   const [slideIndex, setSlideIndex] = useState(0);
+  const [categoryName, setCategoryName] = useState("Universal");
 
   return (
     <main>
       <Header />
       <Search />
       <Slider slideIndex={slideIndex} setSlideIndex={setSlideIndex} />
-      <Categories />
-      <Products />
+      <OurAdvantages />
+      <Categories setCategoryName={setCategoryName} />
+      <Products categoryName={categoryName} />
     </main>
   );
 }
@@ -153,14 +155,49 @@ function CircularProgressBar({ paramName, param }) {
   );
 }
 
-function Categories() {
+function OurAdvantages() {
+  return (
+    <section className="our-advantages">
+      <div className="container">
+        <div className="advantages-content">
+          <div className="advantage-card">
+            <img src={"/public/icons/clock.svg"} alt="clock icon" />
+            <div className="advantage-description">
+              <h3>Quick Delivery</h3>
+              <h4>Your order will arrive within 3 days</h4>
+            </div>
+          </div>
+          <div className="advantage-card">
+            <img src={"/public/icons/package.svg"} alt="package icon" />
+            <div className="advantage-description">
+              <h3>Free Delivery</h3>
+              <h4>For orders over 2100₴</h4>
+            </div>
+          </div>
+          <div className="advantage-card">
+            <img src={"/public/icons/notepad.svg"} alt="notepad icon" />
+            <div className="advantage-description">
+              <h3>Wide Selection</h3>
+              <h4>Of hight-quality products</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Categories({ setCategoryName }) {
   return (
     <section className="categories">
       <h2>Categories</h2>
       <div className="container">
         <div className="categories-box">
           {categoriesElements.map((element) => (
-            <div className="category-card">
+            <div
+              className="category-card"
+              onClick={() => setCategoryName(element.name)}
+            >
               <img src={element.img} alt={element.name} />
               <h3>{element.name}</h3>
             </div>
@@ -171,14 +208,16 @@ function Categories() {
   );
 }
 
-function Products() {
+function Products({ categoryName }) {
   return (
     <section className="products-section">
       <h2>Products</h2>
       <div className="container">
         <div className="products-content">
           {productCardsData
-            .filter((productData) => productData.recommended)
+            .filter((productData) =>
+              productData.category.includes(categoryName)
+            )
             .map((productData) => (
               <div className="product-card">
                 <img src={productData.img} alt={productData.name} />

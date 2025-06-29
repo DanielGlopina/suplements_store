@@ -1,5 +1,9 @@
 const categoriesElements = [
   {
+    name: "Universal",
+    img: "./public/img/whey-protein.png",
+  },
+  {
     name: "Strength",
     img: "./public/img/creatine.png",
   },
@@ -20,7 +24,7 @@ const categoriesElements = [
     img: "./public/img/bcaa.png",
   },
   {
-    name: "Vitamines",
+    name: "Vitamins",
     img: "./public/img/vitamines.png",
   },
 ];
