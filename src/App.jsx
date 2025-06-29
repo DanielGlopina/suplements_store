@@ -1,44 +1,12 @@
 import { useState } from "react";
 import "./index.scss";
 
-const sliderElements = [
-  {
-    name: "Psychotic Hellboy (Insane Labz)",
-    img: "./public/img/psychotic-pretrain.png",
-    color: "dark-red",
-    description:
-      "A high-stimulant pre-workout designed for intense energy, focus, and pump. Ideal for advanced athletes seeking maximum performance.",
-    macrosArr: [
-      ["Caffeine", "90"],
-      ["Beta-Ala", "40"],
-      ["Creatine", "30"],
-    ],
-  },
-  {
-    name: "Elite 100% Whey (Dymatize)",
-    img: "./public/img/elite-protein-powder.png",
-    color: "light-blue",
-    description:
-      "Premium quality whey protein with fast absorption and excellent amino acid profile.",
-    macrosArr: [
-      ["Protein", "80"],
-      ["Carbs", "10"],
-      ["Fats", "6"],
-    ],
-  },
-  {
-    name: "Rule 1 Mass Gainer",
-    img: "./public/img/r1-gainer.png",
-    color: "dark-green",
-    description:
-      "Rich in carbohydrates and protein, ideal for bulking phases and post-workout nutrition.",
-    macrosArr: [
-      ["Protein", "13"],
-      ["Carbs", "82"],
-      ["Fats", "5"],
-    ],
-  },
-];
+//Slider Elements Array import
+import sliderElements from "./sliderElements";
+//Categories Elements Array import
+import categoriesElements from "./categoriesElements";
+//Products Card Data Array import
+import productCardsData from "./productsCardData";
 
 function App() {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -48,31 +16,9 @@ function App() {
       <Header />
       <Search />
       <Slider slideIndex={slideIndex} setSlideIndex={setSlideIndex} />
+      <Categories />
+      <Products />
     </main>
-  );
-}
-
-function Search() {
-  return (
-    <section className="search">
-      <div className="container">
-        <div className="search-content">
-          <div className="search-input">
-            <input type="text" placeholder="Search products" />
-            <button type="button">
-              <img src="./public/icons/search-icon.svg" alt="search icon" />
-            </button>
-          </div>
-
-          <button>
-            <img
-              src="./public/icons/shopping-cart.svg"
-              alt="shopping cart icon"
-            />
-          </button>
-        </div>
-      </div>
-    </section>
   );
 }
 
@@ -103,6 +49,30 @@ function Header() {
         </div>
       </div>
     </header>
+  );
+}
+
+function Search() {
+  return (
+    <section className="search">
+      <div className="container">
+        <div className="search-content">
+          <div className="search-input">
+            <input type="text" placeholder="Search products" />
+            <button type="button">
+              <img src="./public/icons/search-icon.svg" alt="search icon" />
+            </button>
+          </div>
+
+          <button>
+            <img
+              src="./public/icons/shopping-cart.svg"
+              alt="shopping cart icon"
+            />
+          </button>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -180,6 +150,56 @@ function CircularProgressBar({ paramName, param }) {
         </div>
       </div>
     </div>
+  );
+}
+
+function Categories() {
+  return (
+    <section className="categories">
+      <h2>Categories</h2>
+      <div className="container">
+        <div className="categories-box">
+          {categoriesElements.map((element) => (
+            <div className="category-card">
+              <img src={element.img} alt={element.name} />
+              <h3>{element.name}</h3>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Products() {
+  return (
+    <section className="products-section">
+      <h2>Products</h2>
+      <div className="container">
+        <div className="products-content">
+          {productCardsData
+            .filter((productData) => productData.recommended)
+            .map((productData) => (
+              <div className="product-card">
+                <img src={productData.img} alt={productData.name} />
+                <div>
+                  <div className="product-description">
+                    <h3>{productData.name}</h3>
+                    <h4>{productData.brand}</h4>
+                    <h3 className="price">{productData.price}₴</h3>
+                  </div>
+                  <button type="button">
+                    <img
+                      src={"public/icons/shopping-cart.svg"}
+                      alt="Add to shopping cart"
+                    />
+                  </button>
+                </div>
+              </div>
+            ))}
+        </div>
+      </div>
+    </section>
   );
 }
 

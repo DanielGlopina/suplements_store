@@ -1,0 +1,163 @@
+const productCardsData = [
+  // --- Strength ---
+  {
+    name: "Creatine Monohydrate",
+    brand: "Optimum Nutrition",
+    img: "https://assets.hyugalife.com/catalog/product/7/4/748927066623_1-photoroom.png-photoroom.png",
+    category: "Strength",
+    price: 850,
+    inStock: true,
+    recommended: true,
+    flavour: ["Unflavored"],
+    macrosArr: null,
+  },
+  {
+    name: "Test HD Booster",
+    brand: "MuscleTech",
+    img: "https://wee-prod-public.s3.eu-central-1.amazonaws.com/a4ff311c/73a78049/9b37e3bd/916e4b93/66b60b2da6fee4.07071355.medium.png",
+    category: "Strength",
+    price: 1100,
+    inStock: false,
+    recommended: false,
+    flavour: null,
+    macrosArr: null,
+  },
+
+  // --- Energy ---
+  {
+    name: "Psychotic Hellboy",
+    brand: "Insane Labz",
+    img: "https://cdn11.bigcommerce.com/s-qv3l6fwcff/images/stencil/1500x1500/products/6073/16142/psychoticblueraspberry__55086.1704736930.png?c=1",
+    category: "Energy",
+    price: 980,
+    inStock: true,
+    recommended: true,
+    flavour: ["Blue-Raspberry", "Grape", "Lemonade"],
+    macrosArr: [
+      ["Caffeine", "90"],
+      ["Beta-Ala", "40"],
+      ["Creatine", "30"],
+    ],
+  },
+  {
+    name: "C4 Original Pre-Train",
+    brand: "Cellucor",
+    img: "https://images.hollandandbarrettimages.co.uk/productimages/HB/1500/065999_A.png",
+    category: "Energy",
+    price: 750,
+    inStock: true,
+    recommended: false,
+    flavour: ["Unflavored", "Green-Apple"],
+    macrosArr: [
+      ["Caffeine", "150"],
+      ["Beta-Ala", "25"],
+      ["Creatine", "0"],
+    ],
+  },
+
+  // --- Weight-Gain ---
+  {
+    name: "Rule 1 Mass Gainer",
+    brand: "Rule 1",
+    img: "https://blb.uz/image/cache/catalog/image/cache/catalog/tovar13/Mass_12lb_vanilla2-700x700.webp",
+    category: "Weight-Gain",
+    price: 1450,
+    inStock: true,
+    recommended: true,
+    flavour: ["Vanila"],
+    macrosArr: [
+      ["Protein", "13"],
+      ["Carbs", "82"],
+      ["Fats", "5"],
+    ],
+  },
+  {
+    name: "Serious Mass Gainer",
+    brand: "Optimum Nutrition",
+    img: "https://www.bodyclub.gr/image/cache/catalog/Products/ON_Optimum_Nutrition/ON---Optimum-Nutrition-Serious-Mass-2730gr-Chocolate-Peanut-Butter-1200x1200.png",
+    category: "Weight-Gain",
+    price: 1690,
+    inStock: false,
+    recommended: true,
+    flavour: ["Vanila", "Strawberry"],
+    macrosArr: [
+      ["Protein", "25"],
+      ["Carbs", "110"],
+      ["Fats", "4"],
+    ],
+  },
+
+  // --- Weight-Loss ---
+  {
+    name: "Lipo-6 Black Ultra Concentrate",
+    brand: "NutreX",
+    img: "https://nutrex.com/cdn/shop/files/Lipo6-BlackUC-60.png?v=1740081437&width=350",
+    category: "Weight-Loss",
+    price: 720,
+    inStock: true,
+    recommended: true,
+    flavour: null,
+    macrosArr: null,
+  },
+  {
+    name: "Hydroxycut Hardcore Elite",
+    brand: "Muscletech",
+    img: "https://www.muscletech.com/cdn/shop/files/mt-hydroxycut-hardcore-super-elite-120.png?v=1742823177",
+    category: "Weight-Loss",
+    price: 860,
+    inStock: true,
+    recommended: false,
+    flavour: null,
+    macrosArr: null,
+  },
+
+  // --- Recovery ---
+  {
+    name: "BCAA 2:1:1",
+    brand: "Scivation Xtend",
+    img: "https://teamflex.com.au/cdn/shop/products/Xtend_Original_90Serve_WatermelonExplosion.png?v=1625724630",
+    category: "Recovery",
+    price: 880,
+    inStock: true,
+    recommended: true,
+    flavour: ["Unflavored", "Blue-Raspberry", "Green-Apple", "Lemonade"],
+    macrosArr: null,
+  },
+  {
+    name: "Glutamine Micronized",
+    brand: "Dymatize",
+    img: "https://musclehousesupplements.com/wp-content/uploads/2021/09/Dymatize-Glutamine-front-pic-min-min-1-600x600.png",
+    category: "Recovery",
+    price: 650,
+    inStock: true,
+    recommended: false,
+    flavour: null,
+    macrosArr: null,
+  },
+
+  // --- Vitamins ---
+  {
+    name: "Animal Pak Complex",
+    brand: "Universal Nutrition",
+    img: "https://gymbeam.ua/media/catalog/product/cache/70f742f66feec18cb83790f14444a3d1/a/n/animalpak44_front.png",
+    category: "Vitamins",
+    price: 1150,
+    inStock: true,
+    recommended: true,
+    flavour: null,
+    macrosArr: null,
+  },
+  {
+    name: "Opti-Men Complex",
+    brand: "Optimum Nutrition",
+    img: "https://content.optimumnutrition.com/i/on/on-opti-men_Image_01?$TTL_PRODUCT_IMAGES$&locale=en-us,en-gb,*",
+    category: "Vitamins",
+    price: 780,
+    inStock: true,
+    recommended: false,
+    flavour: null,
+    macrosArr: null,
+  },
+];
+
+export default productCardsData;
