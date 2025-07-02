@@ -371,8 +371,8 @@ button {
 
   .products-content {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
     .product-card {
       cursor: pointer;
       h4 {
@@ -381,7 +381,7 @@ button {
 
       img {
         max-width: 100%;
-        max-height: 310px;
+        max-height: 250px;
         border-radius: 20px 20px 0 0;
         background: url(/public/img/product-card-bg.jpg) center center / cover
           no-repeat;
@@ -390,21 +390,20 @@ button {
       div {
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         * {
-          margin: 5px 0;
+          margin: 2px 0;
         }
         button {
           display: flex;
           justify-content: center;
-          align-items: center;
-          width: 50px;
-          height: 50px;
+          width: 40px;
+          height: 40px;
           margin-left: auto;
           margin-right: 10px;
           background-color: rgb(31, 29, 29);
           img {
-            max-width: 35px;
+            max-width: 30px;
             background: none;
           }
         }
@@ -414,14 +413,31 @@ button {
         }
       }
 
+      .flavours {
+        display: flex;
+        justify-content: left;
+        gap: 10px;
+        img {
+          max-height: 30px;
+          max-width: 30px;
+          border-radius: 0;
+        }
+      }
+
       .product-description {
         flex-direction: column;
         align-items: start;
         margin-left: 15px;
 
         .price {
+          margin-top: 10px;
           font-size: 25px;
           font-weight: 500;
+        }
+
+        .weight {
+          font-weight: 500;
+          font-size: 18px;
         }
       }
       background-color: $card-bg-dark-color;
@@ -429,6 +445,22 @@ button {
       text-align: start;
       color: $color-primary-light;
       border-radius: 20px;
+    }
+  }
+
+  .show-more {
+    height: 50px;
+    width: 200px;
+    color: $color-primary-light;
+    background-color: orangered;
+    font-size: 20px;
+    font-family: $primary-title-font;
+    border-radius: 10px;
+    margin-top: 50px;
+    transition: transform 0.5s, background 0.5s;
+    &:hover {
+      box-shadow: 0 0 12px rgba(250, 252, 251, 0.8);
+      background-color: $card-bg-dark-color;
     }
   }
 }
