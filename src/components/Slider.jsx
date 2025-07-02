@@ -1,6 +1,6 @@
-import "./index.scss";
+import "../index.scss";
 //Slider Elements Array Import
-import sliderElements from "./sliderElements";
+import sliderElements from "../data/sliderElements";
 
 function Slider({ slideIndex, setSlideIndex }) {
   const slide = sliderElements[slideIndex];

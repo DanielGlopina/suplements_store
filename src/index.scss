@@ -19,6 +19,10 @@ button {
   cursor: pointer;
 }
 
+.hidden {
+  display: none;
+}
+
 //Header
 .header-content,
 .title-main,
@@ -62,11 +66,21 @@ button {
 
 .search {
   background-color: $body-bg-color;
+  padding: 15px 0;
+  .popular-searches {
+    position: absolute;
+    background-color: $body-bg-color;
+    border: 1px solid $color-primary-light;
+    border-top: none;
+    ul {
+      list-style: none;
+      padding-left: 15px;
+    }
+  }
 }
 
 .search-content {
   display: flex;
-  padding: 15px 0;
 
   * {
     max-height: 45px;
@@ -82,7 +96,7 @@ button {
   }
 
   .search-input {
-    width: 70%;
+    width: 50%;
     display: flex;
 
     input,
@@ -97,7 +111,6 @@ button {
       padding: 5px 20px 5px 20px;
       outline: none;
       color: $color-primary-light;
-      border-radius: 20px 0 0 20px;
       border: 1px solid $color-primary-light;
       border-right: none;
     }
@@ -105,7 +118,6 @@ button {
     button {
       display: flex;
       align-items: center;
-      border-radius: 0 20px 20px 0;
       border: 1px solid $color-primary-light;
       border-left: none;
 

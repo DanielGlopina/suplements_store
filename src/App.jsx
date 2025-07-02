@@ -1,17 +1,19 @@
 import { useState } from "react";
 import "./index.scss";
 
-import Header from "./Header";
-import Search from "./Search";
-import Slider from "./Slider";
-import OurAdvantages from "./OurAdvantages";
-import Categories from "./Categories";
-import Products from "./Products";
+import Header from "./components/Header";
+import Search from "./components/Search";
+import Slider from "./components/Slider";
+import OurAdvantages from "./components/OurAdvantages";
+import Categories from "./components/Categories";
+import Products from "./components/Products";
 
 //Products Card Data Array Import
-import productCardsData from "./productsCardData";
+import productCardsData from "./data/productsCardData";
 
 function App() {
+  const [searchedKeyword, setKeyword] = useState("");
+  const [isHiddenSearchModal, setHidden] = useState(true);
   const [slideIndex, setSlideIndex] = useState(0);
   const [categoryName, setCategoryName] = useState("Universal");
   const [displayedProducts, setProducts] = useState(
@@ -23,7 +25,14 @@ function App() {
   return (
     <main>
       <Header />
-      <Search />
+      <Search
+        productCardsData={productCardsData}
+        setProducts={setProducts}
+        searchedKeyword={searchedKeyword}
+        setKeyword={setKeyword}
+        isHiddenSearchModal={isHiddenSearchModal}
+        setHidden={setHidden}
+      />
       <Slider slideIndex={slideIndex} setSlideIndex={setSlideIndex} />
       <OurAdvantages />
       <Categories

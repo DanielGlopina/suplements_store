@@ -1,8 +1,8 @@
-import "./index.scss";
+import "../index.scss";
 //Categories Elements Array Import
-import categoriesElements from "./categoriesElements";
+import categoriesElements from "../data/categoriesElements";
 //Product Cards Data Array Import
-import productCardsData from "./productsCardData";
+import productCardsData from "../data/productsCardData";
 
 function Categories({ setCategoryName, setProducts, setDispCounter }) {
   const setProductsInArr = (elementName) => {

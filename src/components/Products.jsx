@@ -1,4 +1,4 @@
-import "./index.scss";
+import "../index.scss";
 
 const imgError = (e) => {
   e.target.onerror = null;
