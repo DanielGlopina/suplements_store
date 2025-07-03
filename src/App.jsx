@@ -41,6 +41,7 @@ function App() {
         setDispCounter={setDispCounter}
       />
       <Products
+        setProducts={setProducts}
         displayedProducts={displayedProducts}
         dispCounter={dispCounter}
         setDispCounter={setDispCounter}

@@ -20,7 +20,7 @@ button {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 //Header
@@ -393,11 +393,100 @@ button {
 
 .products-section {
   text-align: center;
-  h2 {
+
+  .sort-panel {
+    padding-bottom: 20px;
+    .panel-content {
+      .panel-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h2 {
+          font-size: 25px;
+        }
+        * {
+          margin: 0;
+        }
+        button {
+          height: 25px;
+          background-color: $body-bg-color;
+          img {
+            height: 20px;
+          }
+        }
+      }
+    }
+
+    .panel-filters {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      * {
+        select {
+          height: 25px;
+          background-color: $body-bg-color;
+          color: $color-primary-light;
+          outline: none;
+
+          option {
+            color: $color-primary-light;
+          }
+        }
+      }
+
+      h3 {
+        margin: 3px;
+        color: $color-primary-light;
+        font-family: $primary-title-font;
+        font-weight: 400;
+      }
+
+      button {
+        background-color: $body-bg-color;
+        color: $color-primary-light;
+        font-size: 20px;
+        font-family: $primary-title-font;
+        font-weight: 400;
+        align-self: flex-end;
+      }
+
+      .price-filter {
+        .price-inputs {
+          height: 25px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          input {
+            width: 80px;
+            height: 85%;
+            background-color: $body-bg-color;
+            outline: none;
+            border: 1px solid $color-primary-light;
+            color: $color-primary-light;
+          }
+
+          h4 {
+            color: $color-primary-light;
+            font-family: $primary-title-font;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+
+  h2,
+  .no-products-title {
     font-family: $primary-title-font;
     color: $color-primary-light;
     font-size: 35px;
     font-weight: 400;
+    margin: 10px;
+  }
+
+  .no-products-title {
+    font-size: 25px;
   }
 
   .products-content {

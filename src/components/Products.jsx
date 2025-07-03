@@ -1,14 +1,29 @@
 import "../index.scss";
+import SortPanel from "./SortPanel";
 
 const imgError = (e) => {
   e.target.onerror = null;
   e.target.src = "public/img/alternative-image.jpg";
 };
 
-function Products({ displayedProducts, dispCounter, setDispCounter }) {
+function Products({
+  setProducts,
+  displayedProducts,
+  dispCounter,
+  setDispCounter,
+}) {
   return (
     <section className="products-section">
       <h2>Products</h2>
+      <SortPanel
+        setProducts={setProducts}
+        displayedProducts={displayedProducts}
+      />
+      <h3 className="no-products-title">
+        {displayedProducts.length < 1
+          ? "No products found by such criteria😢..."
+          : ""}
+      </h3>
       <div className="container">
         <div className="products-content">
           {displayedProducts

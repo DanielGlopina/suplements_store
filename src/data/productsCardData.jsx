@@ -310,7 +310,7 @@ const productCardsData = [
   },
   {
     name: "Lipo-6 Black Ultra",
-    brand: "c",
+    brand: "NutreX",
     img: "https://nutrex.com/cdn/shop/files/Lipo6-BlackUC-60.png?v=1740081437&width=350",
     category: "Weight-Loss Lipo-6 Black Ultra NutreX",
     price: 720,
