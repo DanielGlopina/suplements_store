@@ -40,6 +40,36 @@ function SortPanel({ setProducts }) {
     setProducts(productCardsData);
   };
 
+  // Функции для подсчёта количества с учётом остальных фильтров
+  const getBrandCount = (brand) => {
+    return productCardsData.filter((prod) =>
+      // Все фильтры, кроме бренда
+      (!selectedType || prod.category.includes(selectedType)) &&
+      (!selectedFlavour || prod.flavour.includes(selectedFlavour)) &&
+      (!priceFrom || Number(prod.price) >= Number(priceFrom)) &&
+      (!priceTo || Number(prod.price) <= Number(priceTo)) &&
+      prod.category.includes(brand)
+    ).length;
+  };
+  const getTypeCount = (type) => {
+    return productCardsData.filter((prod) =>
+      (!selectedBrand || prod.category.includes(selectedBrand)) &&
+      (!selectedFlavour || prod.flavour.includes(selectedFlavour)) &&
+      (!priceFrom || Number(prod.price) >= Number(priceFrom)) &&
+      (!priceTo || Number(prod.price) <= Number(priceTo)) &&
+      prod.category.includes(type)
+    ).length;
+  };
+  const getFlavourCount = (flavour) => {
+    return productCardsData.filter((prod) =>
+      (!selectedBrand || prod.category.includes(selectedBrand)) &&
+      (!selectedType || prod.category.includes(selectedType)) &&
+      (!priceFrom || Number(prod.price) >= Number(priceFrom)) &&
+      (!priceTo || Number(prod.price) <= Number(priceTo)) &&
+      prod.flavour.includes(flavour)
+    ).length;
+  };
+
   return (
     <div className="sort-panel">
       <div className="container">
@@ -76,13 +106,7 @@ function SortPanel({ setProducts }) {
               <option value="">All</option>
               {filters[0].brands.map((elem) => (
                 <option value={elem} key={elem}>
-                  {elem} (
-                  {
-                    productCardsData.filter((prod) =>
-                      prod.category.includes(elem)
-                    ).length
-                  }
-                  )
+                  {elem} ({getBrandCount(elem)})
                 </option>
               ))}
             </select>
@@ -94,13 +118,7 @@ function SortPanel({ setProducts }) {
               <option value="">All</option>
               {filters[0].types.map((type) => (
                 <option value={type} key={type}>
-                  {type} (
-                  {
-                    productCardsData.filter((prod) =>
-                      prod.category.includes(type)
-                    ).length
-                  }
-                  )
+                  {type} ({getTypeCount(type)})
                 </option>
               ))}
             </select>
@@ -112,13 +130,7 @@ function SortPanel({ setProducts }) {
               <option value="">All</option>
               {filters[0].flavours.map((flavour) => (
                 <option value={flavour} key={flavour}>
-                  {flavour} (
-                  {
-                    productCardsData.filter((prod) =>
-                      prod.flavour.includes(flavour)
-                    ).length
-                  }
-                  )
+                  {flavour} ({getFlavourCount(flavour)})
                 </option>
               ))}
             </select>
