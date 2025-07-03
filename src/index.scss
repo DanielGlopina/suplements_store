@@ -65,16 +65,36 @@ button {
 //Section Search
 
 .search {
+  position: relative;
   background-color: $body-bg-color;
   padding: 15px 0;
+
   .popular-searches {
+    width: 300px;
     position: absolute;
+    z-index: 10;
     background-color: $body-bg-color;
-    border: 1px solid $color-primary-light;
-    border-top: none;
+    border-right: 1px solid $color-primary-light;
+    border-left: 1px solid $color-primary-light;
+
     ul {
+      margin: 0;
       list-style: none;
-      padding-left: 15px;
+      padding: 0;
+
+      li {
+        height: 25px;
+        border-bottom: 1px solid $color-primary-light;
+        button {
+          width: 100%;
+          text-align: left;
+          font-size: 17px;
+          font-family: $roboto-font;
+          font-weight: 300;
+          color: $color-primary-light;
+          background-color: $body-bg-color;
+        }
+      }
     }
   }
 }
@@ -102,7 +122,6 @@ button {
     input,
     button {
       background-color: rgb(21, 21, 21);
-      padding: 20px 15px 20px 10px;
     }
 
     input {
