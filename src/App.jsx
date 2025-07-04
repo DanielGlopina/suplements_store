@@ -6,6 +6,7 @@ import Search from "./components/Search";
 import Slider from "./components/Slider";
 import OurAdvantages from "./components/OurAdvantages";
 import Categories from "./components/Categories";
+import AddToCartModal from "./components/AddToCartModal";
 import Products from "./components/Products";
 
 //Products Card Data Array Import
@@ -15,6 +16,8 @@ function App() {
   const [searchedKeyword, setKeyword] = useState("");
   const [isHiddenSearchModal, setHidden] = useState(true);
   const [slideIndex, setSlideIndex] = useState(0);
+  const [AddtoCartProd, setCartProd] = useState(productCardsData[0]);
+  const [isHiddenModalCard, setHiddenCard] = useState(true);
   const [categoryName, setCategoryName] = useState("Universal");
   const [displayedProducts, setProducts] = useState(
     productCardsData.filter((productCard) =>
@@ -40,11 +43,19 @@ function App() {
         setProducts={setProducts}
         setDispCounter={setDispCounter}
       />
+      <AddToCartModal
+        AddtoCartProd={AddtoCartProd}
+        isHiddenModalCard={isHiddenModalCard}
+        setHiddenCard={setHiddenCard}
+      />
       <Products
         setProducts={setProducts}
         displayedProducts={displayedProducts}
         dispCounter={dispCounter}
         setDispCounter={setDispCounter}
+        setCartProd={setCartProd}
+        isHiddenModalCard={isHiddenModalCard}
+        setHiddenCard={setHiddenCard}
       />
     </main>
   );

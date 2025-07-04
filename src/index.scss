@@ -19,6 +19,15 @@ button {
   cursor: pointer;
 }
 
+input,
+select,
+option {
+  background-color: $body-bg-color;
+  outline: none;
+  border: 1px solid $color-primary-light;
+  color: $color-primary-light;
+}
+
 .hidden {
   display: none !important;
 }
@@ -390,6 +399,110 @@ button {
     }
   }
 }
+//Modal - Add To Cart
+.add-modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  background-color: rgb(31, 29, 29);
+  padding: 10px 20px 10px 20px;
+  border-radius: 20px;
+
+  select {
+    height: 30px;
+  }
+
+  .close-modal-btn {
+    align-self: flex-end;
+    background-color: rgb(31, 29, 29);
+    img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  img {
+    align-self: center;
+    max-width: 180px;
+  }
+
+  h3,
+  h4 {
+    font-family: $primary-title-font;
+    color: $color-primary-light;
+    margin: 2px;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  h4 {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 5px 0;
+  }
+
+  .price-and-delivery {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h4 {
+      font-weight: 400;
+    }
+
+    .price-modal {
+      font-size: 22px;
+    }
+
+    .delivery {
+      text-align: right;
+    }
+  }
+  .quantity {
+    display: flex;
+    align-items: center;
+    button {
+      height: 30px;
+      width: 30px;
+      font-family: $primary-title-font;
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    input {
+      height: 26px;
+      width: 60px;
+    }
+  }
+
+  .add-cart-btn {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    height: 40px;
+    width: 200px;
+    margin: 20px auto;
+    font-family: $primary-title-font;
+    font-size: 20px;
+    font-weight: 500;
+    color: $color-primary-light;
+    background-color: orangered;
+
+    img {
+      height: 30px;
+      width: 30px;
+    }
+  }
+}
 
 .products-section {
   text-align: center;
@@ -424,13 +537,6 @@ button {
       * {
         select {
           height: 25px;
-          background-color: $body-bg-color;
-          color: $color-primary-light;
-          outline: none;
-
-          option {
-            color: $color-primary-light;
-          }
         }
       }
 
@@ -460,10 +566,6 @@ button {
           input {
             width: 80px;
             height: 85%;
-            background-color: $body-bg-color;
-            outline: none;
-            border: 1px solid $color-primary-light;
-            color: $color-primary-light;
           }
 
           h4 {

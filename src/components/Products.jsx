@@ -11,6 +11,9 @@ function Products({
   displayedProducts,
   dispCounter,
   setDispCounter,
+  setCartProd,
+  isHiddenModalCard,
+  setHiddenCard,
 }) {
   return (
     <section className="products-section">
@@ -31,38 +34,47 @@ function Products({
               (productData) =>
                 displayedProducts.indexOf(productData) < dispCounter
             )
-            .map((productData) => (
-              <div className="product-card">
-                <img
-                  src={productData.img}
-                  onError={imgError}
-                  alt={productData.name}
-                />
-                <div>
-                  <div className="product-description">
-                    <h3>{productData.name}</h3>
-                    <h4>{productData.brand}</h4>
-                    <h4 className="weight">{productData.weight}</h4>
-                    <div className="flavours">
-                      {productData.flavour.map((flavour) => (
-                        <img
-                          src={`public/img/${flavour}-flavour.jpg`}
-                          alt={`${flavour} icon`}
-                          title={flavour}
-                        />
-                      ))}
+            .map((productData) => {
+              const handleAddToCart = () => {
+                setCartProd(productData);
+                setHiddenCard(isHiddenModalCard ? false : true);
+              };
+              return (
+                <div className="product-card">
+                  <img
+                    src={productData.img}
+                    onError={imgError}
+                    alt={productData.name}
+                  />
+                  <div>
+                    <div className="product-description">
+                      <h3>{productData.name}</h3>
+                      <h4>{productData.brand}</h4>
+                      <h4 className="weight">{productData.weight}</h4>
+                      <div className="flavours">
+                        {productData.flavour.map((flavour) => (
+                          <img
+                            src={`public/img/${flavour}-flavour.jpg`}
+                            alt={`${flavour} icon`}
+                            title={flavour}
+                          />
+                        ))}
+                      </div>
+                      <h3 className="price">{productData.price}₴</h3>
                     </div>
-                    <h3 className="price">{productData.price}₴</h3>
+                    <button
+                      type="button"
+                      onClick={handleAddToCart}
+                    >
+                      <img
+                        src={"public/icons/shopping-cart.svg"}
+                        alt="Add to shopping cart"
+                      />
+                    </button>
                   </div>
-                  <button type="button">
-                    <img
-                      src={"public/icons/shopping-cart.svg"}
-                      alt="Add to shopping cart"
-                    />
-                  </button>
                 </div>
-              </div>
-            ))}
+              );
+            })}
         </div>
         {displayedProducts.length <= dispCounter ? (
           ""
