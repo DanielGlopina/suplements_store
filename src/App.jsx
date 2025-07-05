@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./index.scss";
 
 import Header from "./components/Header";
@@ -18,6 +18,7 @@ function App() {
   const [slideIndex, setSlideIndex] = useState(0);
   const [AddtoCartProd, setCartProd] = useState(productCardsData[0]);
   const [isHiddenModalCard, setHiddenCard] = useState(true);
+  const [isBluredBody, setBlured] = useState(false);
   const [categoryName, setCategoryName] = useState("Universal");
   const [displayedProducts, setProducts] = useState(
     productCardsData.filter((productCard) =>
@@ -25,39 +26,52 @@ function App() {
     )
   );
   const [dispCounter, setDispCounter] = useState(8);
+
+  useEffect(() => {
+    if (isBluredBody) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+  }, [isBluredBody]);
+
   return (
-    <main>
-      <Header />
-      <Search
-        productCardsData={productCardsData}
-        setProducts={setProducts}
-        searchedKeyword={searchedKeyword}
-        setKeyword={setKeyword}
-        isHiddenSearchModal={isHiddenSearchModal}
-        setHidden={setHidden}
-      />
-      <Slider slideIndex={slideIndex} setSlideIndex={setSlideIndex} />
-      <OurAdvantages />
-      <Categories
-        setCategoryName={setCategoryName}
-        setProducts={setProducts}
-        setDispCounter={setDispCounter}
-      />
+    <>
+      <main className={`main ${isBluredBody ? "blured" : ""}`}>
+        <Header />
+        <Search
+          productCardsData={productCardsData}
+          setProducts={setProducts}
+          searchedKeyword={searchedKeyword}
+          setKeyword={setKeyword}
+          isHiddenSearchModal={isHiddenSearchModal}
+          setHidden={setHidden}
+        />
+        <Slider slideIndex={slideIndex} setSlideIndex={setSlideIndex} />
+        <OurAdvantages />
+        <Categories
+          setCategoryName={setCategoryName}
+          setProducts={setProducts}
+          setDispCounter={setDispCounter}
+        />
+        <Products
+          setProducts={setProducts}
+          displayedProducts={displayedProducts}
+          dispCounter={dispCounter}
+          setDispCounter={setDispCounter}
+          setCartProd={setCartProd}
+          isHiddenModalCard={isHiddenModalCard}
+          setHiddenCard={setHiddenCard}
+          setBlured={setBlured}
+        />
+      </main>
       <AddToCartModal
         AddtoCartProd={AddtoCartProd}
         isHiddenModalCard={isHiddenModalCard}
         setHiddenCard={setHiddenCard}
+        setBlured={setBlured}
       />
-      <Products
-        setProducts={setProducts}
-        displayedProducts={displayedProducts}
-        dispCounter={dispCounter}
-        setDispCounter={setDispCounter}
-        setCartProd={setCartProd}
-        isHiddenModalCard={isHiddenModalCard}
-        setHiddenCard={setHiddenCard}
-      />
-    </main>
+    </>
   );
 }
 

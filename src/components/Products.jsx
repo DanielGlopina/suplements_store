@@ -14,6 +14,7 @@ function Products({
   setCartProd,
   isHiddenModalCard,
   setHiddenCard,
+  setBlured,
 }) {
   return (
     <section className="products-section">
@@ -38,6 +39,7 @@ function Products({
               const handleAddToCart = () => {
                 setCartProd(productData);
                 setHiddenCard(isHiddenModalCard ? false : true);
+                setBlured(true);
               };
               return (
                 <div className="product-card">
@@ -62,10 +64,7 @@ function Products({
                       </div>
                       <h3 className="price">{productData.price}₴</h3>
                     </div>
-                    <button
-                      type="button"
-                      onClick={handleAddToCart}
-                    >
+                    <button type="button" onClick={handleAddToCart}>
                       <img
                         src={"public/icons/shopping-cart.svg"}
                         alt="Add to shopping cart"

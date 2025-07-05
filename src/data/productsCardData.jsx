@@ -251,7 +251,7 @@ const productCardsData = [
   {
     name: "Mass Gainer",
     brand: "Rule 1",
-    img: "https://blb.uz/image/cache/catalog/image/cache/catalog/tovar13/Mass_12lb_vanilla2-700x700.webp",
+    img: "https://beastnutrition.store/wp-content/uploads/0002_R1_LBS_bag_Vanilla-Creme.png",
     category: "Weight-Gain Mass-Gainer Rule 1",
     price: 1450,
     inStock: true,
@@ -281,7 +281,7 @@ const productCardsData = [
   {
     name: "Mass-Tech Extreme 2000",
     brand: "MuscleTech",
-    img: "https://international.muscletech.com/wp-content/uploads/2022/01/muscletech-mass-tech-extreme-2000.png",
+    img: "https://www.muscletech.com/cdn/shop/files/muscletech-masstech-extreme-choc-6lb_1440x1440.png?v=1724737135",
     category: "Weight-Gain Mass-Gainer Mass-Tech Extreme 2000 MuscleTech",
     price: 1980,
     inStock: true,
@@ -296,7 +296,7 @@ const productCardsData = [
   {
     name: "Serious Mass Gainer",
     brand: "Optimum Nutrition",
-    img: "https://www.bodyclub.gr/image/cache/catalog/Products/ON_Optimum_Nutrition/ON---Optimum-Nutrition-Serious-Mass-2730gr-Chocolate-Peanut-Butter-1200x1200.png",
+    img: "https://content.optimumnutrition.com/i/on/on-serious-mass_Image_01?$TTL_PRODUCT_IMAGES$&locale=en-us,en-gb,*",
     category: "Weight-Gain Serious Mass-Gainer Optimum Nutrition",
     price: 1690,
     inStock: false,

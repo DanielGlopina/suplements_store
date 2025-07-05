@@ -86,9 +86,9 @@ function Search({
             <li>
               <button
                 type="button"
-                onClick={() => handleKeywordChange("Mass Gainer")}
+                onClick={() => handleKeywordChange("Mass-Gainer")}
               >
-                Mass Gainer
+                Mass-Gainer
               </button>
             </li>
             <li>

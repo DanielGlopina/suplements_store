@@ -1,7 +1,17 @@
 import "../index.scss";
 import { useState } from "react";
 
-function AddToCartModal({ AddtoCartProd, isHiddenModalCard, setHiddenCard }) {
+function AddToCartModal({
+  AddtoCartProd,
+  isHiddenModalCard,
+  setHiddenCard,
+  setBlured,
+}) {
+  const handleCloseModal = () => {
+    setHiddenCard(isHiddenModalCard ? false : true);
+    setBlured(false);
+  };
+
   return (
     <div className={`add-modal ${isHiddenModalCard ? "hidden" : ""}`}>
       <div className="container">
@@ -9,7 +19,7 @@ function AddToCartModal({ AddtoCartProd, isHiddenModalCard, setHiddenCard }) {
           <button
             type="button"
             className="close-modal-btn"
-            onClick={() => setHiddenCard(isHiddenModalCard ? false : true)}
+            onClick={handleCloseModal}
           >
             <img src="public/icons/close-btn.svg" alt="close button" />
           </button>

@@ -32,6 +32,20 @@ option {
   display: none !important;
 }
 
+.blured {
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+  transition: filter 0.3s ease;
+}
+
+main.blured {
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+  transition: filter 0.3s ease;
+}
+
 //Header
 .header-content,
 .title-main,
@@ -400,18 +414,38 @@ option {
   }
 }
 //Modal - Add To Cart
-.add-modal-content {
+.no-scroll {
+  overflow: hidden !important;
+  height: 100vh;
+}
+
+.add-modal {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 11;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.add-modal:not(.hidden) {
+  pointer-events: auto;
+}
+
+.add-modal-content {
+  position: relative;
+  z-index: 1001;
   display: flex;
   flex-direction: column;
-  width: 300px;
+  max-width: 370px;
   background-color: rgb(31, 29, 29);
   padding: 10px 20px 10px 20px;
   border-radius: 20px;
+  margin: 0 auto;
 
   select {
     height: 30px;
