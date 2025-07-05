@@ -7,6 +7,7 @@ import Slider from "./components/Slider";
 import OurAdvantages from "./components/OurAdvantages";
 import Categories from "./components/Categories";
 import AddToCartModal from "./components/AddToCartModal";
+import ProductDescriptionModal from "./components/ProductDescriptionModal";
 import Products from "./components/Products";
 
 //Products Card Data Array Import
@@ -18,6 +19,7 @@ function App() {
   const [slideIndex, setSlideIndex] = useState(0);
   const [AddtoCartProd, setCartProd] = useState(productCardsData[0]);
   const [isHiddenModalCard, setHiddenCard] = useState(true);
+  const [isHiddenDescrModal, setHiddenDescr] = useState(true);
   const [isBluredBody, setBlured] = useState(false);
   const [categoryName, setCategoryName] = useState("Universal");
   const [displayedProducts, setProducts] = useState(
@@ -62,6 +64,8 @@ function App() {
           setCartProd={setCartProd}
           isHiddenModalCard={isHiddenModalCard}
           setHiddenCard={setHiddenCard}
+          isHiddenDescrModal={isHiddenDescrModal}
+          setHiddenDescr={setHiddenDescr}
           setBlured={setBlured}
         />
       </main>
@@ -69,6 +73,12 @@ function App() {
         AddtoCartProd={AddtoCartProd}
         isHiddenModalCard={isHiddenModalCard}
         setHiddenCard={setHiddenCard}
+        setBlured={setBlured}
+      />
+      <ProductDescriptionModal
+        AddtoCartProd={AddtoCartProd}
+        isHiddenDescrModal={isHiddenDescrModal}
+        setHiddenDescr={setHiddenDescr}
         setBlured={setBlured}
       />
     </>

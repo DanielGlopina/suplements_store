@@ -12,8 +12,12 @@ const productCardsData = [
       ["Protein", "24g"],
       ["Carbs", "3g"],
       ["Fat", "1g"],
+      ["Calories", "120"],
+      ["BCAA", "5.5g"],
     ],
     weight: "2270g",
+    description:
+      "Premium whey protein isolate with 24g of protein per serving. Perfect for muscle building and recovery after workouts.",
   },
   {
     name: "ISO100 Whey Protein",
@@ -27,8 +31,12 @@ const productCardsData = [
       ["Protein", "25g"],
       ["Carbs", "2g"],
       ["Fat", "0.5g"],
+      ["Calories", "110"],
+      ["BCAA", "5.7g"],
     ],
     weight: "2300g",
+    description:
+      "Ultra-pure whey protein isolate with minimal carbs and fat. Ideal for lean muscle development and weight management.",
   },
   {
     name: "Whey Protein",
@@ -42,8 +50,12 @@ const productCardsData = [
       ["Protein", "21g"],
       ["Carbs", "1.9g"],
       ["Fat", "1.9g"],
+      ["Calories", "103"],
+      ["BCAA", "4.5g"],
     ],
     weight: "1000g",
+    description:
+      "High-quality whey protein concentrate with great taste and excellent value. Perfect for daily protein supplementation.",
   },
   {
     name: "ISO Whey Zero",
@@ -58,8 +70,12 @@ const productCardsData = [
       ["Protein", "22g"],
       ["Carbs", "0.6g"],
       ["Fat", "0.5g"],
+      ["Calories", "95"],
+      ["BCAA", "5.0g"],
     ],
     weight: "2270g",
+    description:
+      "Zero-carb whey protein isolate perfect for ketogenic diets and strict muscle building protocols.",
   },
   {
     name: "Delicious Whey Protein",
@@ -73,8 +89,12 @@ const productCardsData = [
       ["Protein", "23g"],
       ["Carbs", "1.9g"],
       ["Fat", "1.5g"],
+      ["Calories", "113"],
+      ["BCAA", "5.2g"],
     ],
     weight: "908g",
+    description:
+      "Delicious whey protein blend with premium taste and smooth texture. Great for post-workout recovery.",
   },
   {
     name: "100% Whey Protein",
@@ -89,8 +109,12 @@ const productCardsData = [
       ["Protein", "22g"],
       ["Carbs", "1.4g"],
       ["Fat", "1.8g"],
+      ["Calories", "108"],
+      ["BCAA", "5.0g"],
     ],
     weight: "2350g",
+    description:
+      "Pure whey protein concentrate with optimal amino acid profile for muscle growth and recovery.",
   },
   {
     name: "Greens Superfood",
@@ -104,8 +128,12 @@ const productCardsData = [
       ["Calories", "30"],
       ["Fiber", "2g"],
       ["Greens Blend", "7g"],
+      ["Vitamin A", "100%"],
+      ["Vitamin C", "60%"],
     ],
     weight: "240g",
+    description:
+      "Organic greens powder blend with essential vitamins and minerals. Perfect for daily nutrition boost.",
   },
   {
     name: "Ashwagandha KSM-66",
@@ -119,8 +147,12 @@ const productCardsData = [
       ["Ashwagandha Extract", "600mg"],
       ["Withanolides", "5%"],
       ["Capsules", "60"],
+      ["Calories", "5"],
+      ["Fiber", "0.5g"],
     ],
     weight: "60 caps",
+    description:
+      "Premium KSM-66 Ashwagandha extract for stress reduction, improved sleep, and enhanced recovery.",
   },
   {
     name: "Collagen Peptides",
@@ -134,8 +166,12 @@ const productCardsData = [
       ["Collagen", "20g"],
       ["Vitamin C", "90mg"],
       ["Hyaluronic Acid", "80mg"],
+      ["Calories", "70"],
+      ["Protein", "18g"],
     ],
     weight: "209g",
+    description:
+      "Hydrolyzed collagen peptides for skin, hair, and joint health. Enhanced with vitamin C for better absorption.",
   },
   {
     name: "Creatine Monohydrate",
@@ -146,8 +182,16 @@ const productCardsData = [
     price: 850,
     inStock: true,
     flavour: ["unflavored"],
-    macrosArr: null,
+    macrosArr: [
+      ["Creatine Monohydrate", "5g"],
+      ["Calories", "20"],
+      ["Serving Size", "5g"],
+      ["Purity", "99.9%"],
+      ["Water Content", "<1%"],
+    ],
     weight: "300g",
+    description:
+      "Pure creatine monohydrate powder for increased strength, power, and muscle mass gains.",
   },
   {
     name: "100% Pure Creatine",
@@ -158,8 +202,16 @@ const productCardsData = [
     price: 720,
     inStock: true,
     flavour: ["unflavored"],
-    macrosArr: null,
+    macrosArr: [
+      ["Creatine Monohydrate", "5g"],
+      ["Calories", "20"],
+      ["Serving Size", "5g"],
+      ["Purity", "99.9%"],
+      ["Water Content", "<1%"],
+    ],
     weight: "300g",
+    description:
+      "High-quality creatine monohydrate for explosive strength and muscle performance enhancement.",
   },
   {
     name: "Test HD Booster",
@@ -169,8 +221,16 @@ const productCardsData = [
     flavour: ["unflavored"],
     price: 1100,
     inStock: false,
-    macrosArr: null,
+    macrosArr: [
+      ["Tribulus Terrestris", "1000mg"],
+      ["D-Aspartic Acid", "3000mg"],
+      ["Zinc", "15mg"],
+      ["Vitamin D3", "2000IU"],
+      ["Calories", "10"],
+    ],
     weight: "90 caps",
+    description:
+      "Natural testosterone booster with clinically proven ingredients for muscle growth and performance.",
   },
   {
     name: "Psychotic Hellboy",
@@ -181,11 +241,15 @@ const productCardsData = [
     inStock: true,
     flavour: ["grape", "lemon"],
     macrosArr: [
-      ["Caffeine", "90"],
-      ["Beta-Ala", "40"],
-      ["Creatine", "30"],
+      ["Caffeine", "90mg"],
+      ["Beta-Ala", "40mg"],
+      ["Creatine", "30mg"],
+      ["Calories", "15"],
+      ["Vitamin B6", "10mg"],
     ],
     weight: "210g",
+    description:
+      "Extreme pre-workout formula for maximum energy, focus, and performance during intense training sessions.",
   },
   {
     name: "C4 Shot",
@@ -196,11 +260,15 @@ const productCardsData = [
     inStock: true,
     flavour: ["strawberry", "green-apple"],
     macrosArr: [
-      ["Caffeine", "200"],
-      ["Beta-Alanine", "1600"],
-      ["Arginine", "500"],
+      ["Caffeine", "200mg"],
+      ["Beta-Alanine", "1600mg"],
+      ["Arginine", "500mg"],
+      ["Calories", "5"],
+      ["Vitamin B12", "6mcg"],
     ],
     weight: "60ml",
+    description:
+      "Quick-acting pre-workout shot for instant energy boost and enhanced performance during training.",
   },
   {
     name: "Pre JYM High Stim",
@@ -212,11 +280,15 @@ const productCardsData = [
     inStock: true,
     flavour: ["grape", "lemon", "green-apple"],
     macrosArr: [
-      ["Caffeine", "300"],
-      ["Beta-Alanine", "2000"],
-      ["Citrulline Malate", "6000"],
+      ["Caffeine", "300mg"],
+      ["Beta-Alanine", "2000mg"],
+      ["Citrulline Malate", "6000mg"],
+      ["Calories", "25"],
+      ["Creatine HCl", "2000mg"],
     ],
     weight: "420g",
+    description:
+      "High-stimulation pre-workout with clinically dosed ingredients for maximum performance and focus.",
   },
   {
     name: "N.O.-XPLODE Shot",
@@ -227,11 +299,15 @@ const productCardsData = [
     inStock: false,
     flavour: ["grape"],
     macrosArr: [
-      ["Caffeine", "275"],
-      ["Beta-Alanine", "1000"],
-      ["Tyrosine", "250"],
+      ["Caffeine", "275mg"],
+      ["Beta-Alanine", "1000mg"],
+      ["Tyrosine", "250mg"],
+      ["Calories", "10"],
+      ["Vitamin B6", "5mg"],
     ],
     weight: "60ml",
+    description:
+      "Ready-to-drink pre-workout shot for explosive energy and nitric oxide production.",
   },
   {
     name: "C4 Original Pre-Train",
@@ -242,11 +318,15 @@ const productCardsData = [
     inStock: true,
     flavour: ["unflavored"],
     macrosArr: [
-      ["Caffeine", "150"],
-      ["Beta-Ala", "25"],
-      ["Creatine", "0"],
+      ["Caffeine", "150mg"],
+      ["Beta-Ala", "25mg"],
+      ["Creatine", "0mg"],
+      ["Calories", "15"],
+      ["Vitamin B12", "3mcg"],
     ],
     weight: "195g",
+    description:
+      "Original C4 formula for enhanced energy, focus, and performance during workouts.",
   },
   {
     name: "Mass Gainer",
@@ -257,11 +337,15 @@ const productCardsData = [
     inStock: true,
     flavour: ["vanilla"],
     macrosArr: [
-      ["Protein", "13"],
-      ["Carbs", "82"],
-      ["Fats", "5"],
+      ["Protein", "13g"],
+      ["Carbs", "82g"],
+      ["Fats", "5g"],
+      ["Calories", "420"],
+      ["BCAA", "3.2g"],
     ],
     weight: "2720g",
+    description:
+      "High-calorie mass gainer with optimal protein-to-carb ratio for muscle growth and weight gain.",
   },
   {
     name: "Mutant Mass Extreme 2500",
@@ -272,11 +356,15 @@ const productCardsData = [
     inStock: true,
     flavour: ["chocolate", "vanilla"],
     macrosArr: [
-      ["Protein", "30"],
-      ["Carbs", "255"],
-      ["Fats", "9"],
+      ["Protein", "30g"],
+      ["Carbs", "255g"],
+      ["Fats", "9g"],
+      ["Calories", "1250"],
+      ["BCAA", "7.2g"],
     ],
     weight: "2270g",
+    description:
+      "Extreme mass gainer with 2500 calories per serving for maximum muscle and weight gain.",
   },
   {
     name: "Mass-Tech Extreme 2000",
@@ -287,11 +375,15 @@ const productCardsData = [
     inStock: true,
     flavour: ["chocolate", "cookies"],
     macrosArr: [
-      ["Protein", "60"],
-      ["Carbs", "400"],
-      ["Fats", "14"],
+      ["Protein", "60g"],
+      ["Carbs", "400g"],
+      ["Fats", "14g"],
+      ["Calories", "2000"],
+      ["BCAA", "14.4g"],
     ],
     weight: "4510g",
+    description:
+      "Ultra-high calorie mass gainer with 2000 calories per serving for extreme muscle building.",
   },
   {
     name: "Serious Mass Gainer",
@@ -302,11 +394,15 @@ const productCardsData = [
     inStock: false,
     flavour: ["vanilla", "strawberry"],
     macrosArr: [
-      ["Protein", "25"],
-      ["Carbs", "110"],
-      ["Fats", "4"],
+      ["Protein", "25g"],
+      ["Carbs", "110g"],
+      ["Fats", "4g"],
+      ["Calories", "625"],
+      ["BCAA", "6.0g"],
     ],
     weight: "2730g",
+    description:
+      "Serious mass gainer with 1250 calories per serving for hardgainers and muscle building.",
   },
   {
     name: "Lipo-6 Black Ultra",
@@ -316,8 +412,16 @@ const productCardsData = [
     price: 720,
     inStock: true,
     flavour: ["unflavored"],
-    macrosArr: null,
+    macrosArr: [
+      ["Caffeine", "200mg"],
+      ["Yohimbine HCl", "3mg"],
+      ["Synephrine", "20mg"],
+      ["Calories", "5"],
+      ["Vitamin B6", "10mg"],
+    ],
     weight: "60 caps",
+    description:
+      "Advanced fat burner with multiple thermogenic compounds for maximum fat loss and energy.",
   },
   {
     name: "Animal Cuts Powder",
@@ -328,11 +432,15 @@ const productCardsData = [
     inStock: true,
     flavour: ["unflavored"],
     macrosArr: [
-      ["Caffeine", "250"],
-      ["L-Carnitine", "1500"],
-      ["Green Tea Extract", "200"],
+      ["Caffeine", "250mg"],
+      ["L-Carnitine", "1500mg"],
+      ["Green Tea Extract", "200mg"],
+      ["Calories", "15"],
+      ["Vitamin B6", "15mg"],
     ],
     weight: "210g",
+    description:
+      "Comprehensive fat burning formula with thermogenic and appetite control ingredients.",
   },
   {
     name: "Shred JYM",
@@ -343,11 +451,15 @@ const productCardsData = [
     inStock: true,
     flavour: ["unflavored"],
     macrosArr: [
-      ["Acetyl-L-Carnitine", "1500"],
-      ["Green Tea Extract", "500"],
-      ["Caffeine", "200"],
+      ["Acetyl-L-Carnitine", "1500mg"],
+      ["Green Tea Extract", "500mg"],
+      ["Caffeine", "200mg"],
+      ["Calories", "10"],
+      ["Vitamin B12", "10mcg"],
     ],
     weight: "240 capsules",
+    description:
+      "Scientifically formulated fat burner with clinically proven ingredients for effective weight loss.",
   },
   {
     name: "Hydroxycut Hardcore",
@@ -357,8 +469,16 @@ const productCardsData = [
     price: 860,
     inStock: true,
     flavour: ["unflavored"],
-    macrosArr: null,
+    macrosArr: [
+      ["Caffeine", "270mg"],
+      ["Green Coffee Bean", "200mg"],
+      ["Garcinia Cambogia", "500mg"],
+      ["Calories", "5"],
+      ["Vitamin B12", "6mcg"],
+    ],
     weight: "120 caps",
+    description:
+      "Hardcore fat burner with multiple thermogenic compounds for maximum fat loss results.",
   },
   {
     name: "BCAA 2:1:1",
@@ -368,8 +488,16 @@ const productCardsData = [
     price: 880,
     inStock: true,
     flavour: ["unflavored", "green-apple", "lemon"],
-    macrosArr: null,
+    macrosArr: [
+      ["BCAA Blend", "7g"],
+      ["L-Leucine", "3.5g"],
+      ["L-Isoleucine", "1.75g"],
+      ["L-Valine", "1.75g"],
+      ["Calories", "25"],
+    ],
     weight: "384g",
+    description:
+      "Premium BCAA formula with 2:1:1 ratio for muscle recovery and protein synthesis support.",
   },
   {
     name: "BCAA 4:1:1",
@@ -379,8 +507,16 @@ const productCardsData = [
     price: 540,
     inStock: true,
     flavour: ["unflavored", "lemon", "green-apple"],
-    macrosArr: null,
+    macrosArr: [
+      ["BCAA Blend", "5g"],
+      ["L-Leucine", "4g"],
+      ["L-Isoleucine", "0.5g"],
+      ["L-Valine", "0.5g"],
+      ["Calories", "20"],
+    ],
     weight: "400g",
+    description:
+      "High-leucine BCAA blend with 4:1:1 ratio for enhanced muscle building and recovery.",
   },
   {
     name: "Glutamine Micronized",
@@ -390,8 +526,16 @@ const productCardsData = [
     price: 650,
     inStock: true,
     flavour: ["unflavored"],
-    macrosArr: null,
+    macrosArr: [
+      ["L-Glutamine", "5g"],
+      ["Calories", "20"],
+      ["Serving Size", "5g"],
+      ["Purity", "99.9%"],
+      ["Water Content", "<1%"],
+    ],
     weight: "300g",
+    description:
+      "Micronized glutamine powder for improved muscle recovery and immune system support.",
   },
   {
     name: "Animal Pak Complex",
@@ -401,8 +545,16 @@ const productCardsData = [
     price: 1150,
     inStock: true,
     flavour: ["unflavored"],
-    macrosArr: null,
+    macrosArr: [
+      ["Vitamin A", "5000IU"],
+      ["Vitamin C", "500mg"],
+      ["Vitamin D3", "400IU"],
+      ["Vitamin E", "50IU"],
+      ["Calories", "15"],
+    ],
     weight: "44 packs",
+    description:
+      "Comprehensive vitamin and mineral complex designed specifically for athletes and bodybuilders.",
   },
   {
     name: "Opti-Men Complex",
@@ -412,8 +564,16 @@ const productCardsData = [
     price: 780,
     inStock: true,
     flavour: ["unflavored"],
-    macrosArr: null,
+    macrosArr: [
+      ["Vitamin A", "3000IU"],
+      ["Vitamin C", "300mg"],
+      ["Vitamin D3", "400IU"],
+      ["Vitamin E", "45IU"],
+      ["Calories", "10"],
+    ],
     weight: "90 tabs",
+    description:
+      "Complete men's multivitamin with essential nutrients for optimal health and performance.",
   },
   {
     name: "Hydrolyzed Collagen Peptides",
@@ -423,8 +583,16 @@ const productCardsData = [
     price: 970,
     inStock: true,
     flavour: ["unflavored", "green-apple", "grape", "strawberry"],
-    macrosArr: null,
+    macrosArr: [
+      ["Collagen Peptides", "10g"],
+      ["Protein", "9g"],
+      ["Calories", "35"],
+      ["Serving Size", "10g"],
+      ["Vitamin C", "50mg"],
+    ],
     weight: "300g",
+    description:
+      "Hydrolyzed collagen peptides for skin, hair, and joint health. Enhanced with vitamin C for better absorption.",
   },
 ];
 

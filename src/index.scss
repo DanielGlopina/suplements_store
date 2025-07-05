@@ -420,16 +420,7 @@ main.blured {
 }
 
 .add-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
+  @extend %add-modal;
 }
 
 .add-modal:not(.hidden) {
@@ -437,50 +428,15 @@ main.blured {
 }
 
 .add-modal-content {
-  position: relative;
-  z-index: 1001;
-  display: flex;
-  flex-direction: column;
-  max-width: 370px;
-  background-color: rgb(31, 29, 29);
-  padding: 10px 20px 10px 20px;
-  border-radius: 20px;
-  margin: 0 auto;
+  @extend %modal-template;
 
   select {
     height: 30px;
   }
 
-  .close-modal-btn {
-    align-self: flex-end;
-    background-color: rgb(31, 29, 29);
-    img {
-      width: 25px;
-      height: 25px;
-    }
-  }
-
   img {
     align-self: center;
     max-width: 180px;
-  }
-
-  h3,
-  h4 {
-    font-family: $primary-title-font;
-    color: $color-primary-light;
-    margin: 2px;
-  }
-
-  h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-
-  h4 {
-    font-size: 15px;
-    font-weight: 500;
-    margin: 5px 0;
   }
 
   .price-and-delivery {
@@ -535,6 +491,34 @@ main.blured {
       height: 30px;
       width: 30px;
     }
+  }
+}
+
+.product-descr-modal {
+  @extend %modal-template;
+  color: $color-primary-light;
+
+  .macros-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    margin-top: 16px;
+    border: $color-primary-light;
+
+    div {
+      padding: 6px 10px;
+      background: #222;
+      color: #eee;
+      border-radius: 4px;
+      font-size: 17px;
+      text-align: left;
+      font-family: $primary-title-font;
+    }
+  }
+
+  p {
+    font-family: $roboto-font;
+    font-weight: 300;
   }
 }
 
@@ -645,21 +629,20 @@ main.blured {
 
       div {
         display: flex;
-        justify-content: center;
-        align-items: flex-start;
+        align-items: center;
         * {
           margin: 2px 0;
         }
         button {
           display: flex;
           justify-content: center;
-          width: 40px;
-          height: 40px;
+          width: 35px;
+          height: 35px;
           margin-left: auto;
           margin-right: 10px;
           background-color: rgb(31, 29, 29);
           img {
-            max-width: 30px;
+            max-width: 25px;
             background: none;
           }
         }
@@ -667,6 +650,13 @@ main.blured {
         button:hover {
           background: orangered;
         }
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        gap: 10px;
       }
 
       .flavours {

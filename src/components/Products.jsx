@@ -14,6 +14,8 @@ function Products({
   setCartProd,
   isHiddenModalCard,
   setHiddenCard,
+  isHiddenDescrModal,
+  setHiddenDescr,
   setBlured,
 }) {
   return (
@@ -41,6 +43,12 @@ function Products({
                 setHiddenCard(isHiddenModalCard ? false : true);
                 setBlured(true);
               };
+
+              const handleProdDescr = () => {
+                setCartProd(productData);
+                setHiddenDescr(isHiddenDescrModal ? false : true);
+                setBlured(true);
+              };
               return (
                 <div className="product-card">
                   <img
@@ -64,12 +72,20 @@ function Products({
                       </div>
                       <h3 className="price">{productData.price}₴</h3>
                     </div>
-                    <button type="button" onClick={handleAddToCart}>
-                      <img
-                        src={"public/icons/shopping-cart.svg"}
-                        alt="Add to shopping cart"
-                      />
-                    </button>
+                    <div className="buttons">
+                      <button type="button" onClick={handleProdDescr}>
+                        <img
+                          src={"public/icons/more-info.svg"}
+                          alt="More info"
+                        />
+                      </button>
+                      <button type="button" onClick={handleAddToCart}>
+                        <img
+                          src={"public/icons/shopping-cart.svg"}
+                          alt="Add to shopping cart"
+                        />
+                      </button>
+                    </div>
                   </div>
                 </div>
               );
