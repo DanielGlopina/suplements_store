@@ -1,5 +1,6 @@
 const productCardsData = [
   {
+    id: 1,
     name: "Gold Standard Whey",
     brand: "Optimum Nutrition",
     img: "https://nutristore.co.uk/cdn/shop/files/optimum-nutrition-gold-standard-100-whey-protein-227kg-160485.png?v=1742901099",
@@ -20,6 +21,7 @@ const productCardsData = [
       "Premium whey protein isolate with 24g of protein per serving. Perfect for muscle building and recovery after workouts.",
   },
   {
+    id: 2,
     name: "ISO100 Whey Protein",
     brand: "Dymatize",
     img: "https://suppsrus.com.au/cdn/shop/files/Dymatize-Iso100-2.3kg-chocpb-elite-supps_99ca2443-1bdb-40e2-9886-9d171b6397ca.png?v=1749050465",
@@ -39,6 +41,7 @@ const productCardsData = [
       "Ultra-pure whey protein isolate with minimal carbs and fat. Ideal for lean muscle development and weight management.",
   },
   {
+    id: 3,
     name: "Whey Protein",
     brand: "MyProtein",
     img: "https://www.ssn.ug/wp-content/uploads/2021/02/myprotein-impact-whey-protein-1kg-p27187-17290_image-1.png",
@@ -58,6 +61,7 @@ const productCardsData = [
       "High-quality whey protein concentrate with great taste and excellent value. Perfect for daily protein supplementation.",
   },
   {
+    id: 4,
     name: "ISO Whey Zero",
     brand: "BioTechUSA",
     img: "https://belok.ua/image/cache/catalog/foto2019/Golds/loadkep.php-600x600.png",
@@ -78,6 +82,7 @@ const productCardsData = [
       "Zero-carb whey protein isolate perfect for ketogenic diets and strict muscle building protocols.",
   },
   {
+    id: 5,
     name: "Delicious Whey Protein",
     brand: "QNT",
     img: "https://www.qntsport.com/1483-modal/delicious-whey-protein-908-g.jpg",
@@ -97,6 +102,7 @@ const productCardsData = [
       "Delicious whey protein blend with premium taste and smooth texture. Great for post-workout recovery.",
   },
   {
+    id: 6,
     name: "100% Whey Protein",
     brand: "Scitec Nutrition",
     img: "https://scitec.cz/images/product_images/5146_6ad91ca8b447.webp",
@@ -117,6 +123,7 @@ const productCardsData = [
       "Pure whey protein concentrate with optimal amino acid profile for muscle growth and recovery.",
   },
   {
+    id: 7,
     name: "Greens Superfood",
     brand: "Amazing Grass",
     img: "https://amazinggrass.com/cdn/shop/files/GreensBlend-og_grande.png?v=1747319554",
@@ -136,6 +143,7 @@ const productCardsData = [
       "Organic greens powder blend with essential vitamins and minerals. Perfect for daily nutrition boost.",
   },
   {
+    id: 8,
     name: "Ashwagandha KSM-66",
     brand: "MST",
     img: "https://mst-nutrition.de/cdn/shop/files/mstksm66ashwagandha70x15060kaps-1png.png?v=1739172895",
@@ -155,6 +163,7 @@ const productCardsData = [
       "Premium KSM-66 Ashwagandha extract for stress reduction, improved sleep, and enhanced recovery.",
   },
   {
+    id: 9,
     name: "Collagen Peptides",
     brand: "Vital Proteins",
     img: "https://i5.walmartimages.com/seo/Vital-Proteins-Collagen-Peptides-Beauty-Supplement-Powder-for-Hair-Skin-and-Nails-Unflavored-7-37-oz_b0daa5f3-d08a-4dcf-8cdb-1b132c4b3c2d.2f974e4ce159d5344274711c176f0e38.png",
@@ -174,6 +183,7 @@ const productCardsData = [
       "Hydrolyzed collagen peptides for skin, hair, and joint health. Enhanced with vitamin C for better absorption.",
   },
   {
+    id: 10,
     name: "Creatine Monohydrate",
     brand: "Optimum Nutrition",
     img: "https://assets.hyugalife.com/catalog/product/7/4/748927066623_1-photoroom.png-photoroom.png",

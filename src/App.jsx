@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./index.scss";
 
 import Header from "./components/Header";
+import ShoppingCartModal from "./components/ShoppingCartModal";
 import Search from "./components/Search";
 import Slider from "./components/Slider";
 import OurAdvantages from "./components/OurAdvantages";
@@ -14,6 +15,7 @@ import Products from "./components/Products";
 import productCardsData from "./data/productsCardData";
 
 function App() {
+  const [isHiddenShoppingCart, setHiddenShopCart] = useState(true);
   const [searchedKeyword, setKeyword] = useState("");
   const [isHiddenSearchModal, setHidden] = useState(true);
   const [slideIndex, setSlideIndex] = useState(0);
@@ -28,6 +30,11 @@ function App() {
     )
   );
   const [dispCounter, setDispCounter] = useState(8);
+  const [cart, setCart] = useState(() => {
+    const savedCart = localStorage.getItem("cart");
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
+  const [toast, setToast] = useState({ visible: false, message: "" });
 
   useEffect(() => {
     if (isBluredBody) {
@@ -36,6 +43,65 @@ function App() {
       document.body.classList.remove("no-scroll");
     }
   }, [isBluredBody]);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
+  const showToast = (message) => {
+    setToast({ visible: true, message });
+    setTimeout(() => setToast({ visible: false, message: "" }), 2000);
+  };
+
+  const addToCart = (product, flavour, quantity) => {
+    const existingIndex = cart.findIndex(
+      (item) =>
+        item.id === product.id &&
+        item.flavour === flavour &&
+        item.brand === product.brand
+    );
+    if (existingIndex !== -1) {
+      const updatedCart = [...cart];
+      updatedCart[existingIndex].quantity += quantity;
+      setCart(updatedCart);
+    } else {
+      setCart([
+        ...cart,
+        {
+          ...product,
+          flavour,
+          quantity,
+        },
+      ]);
+    }
+    showToast(`Added to cart: ${product.name} (${product.brand})`);
+  };
+
+  const removeFromCart = (productId, flavour) => {
+    setCart(
+      cart.filter(
+        (item) => !(item.id === productId && item.flavour === flavour)
+      )
+    );
+  };
+  const increaseQuantityInCart = (productId, flavour) => {
+    setCart((cart) =>
+      cart.map((item) =>
+        item.id === productId && item.flavour === flavour
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      )
+    );
+  };
+  const decreaseQuantityInCart = (productId, flavour) => {
+    setCart((cart) =>
+      cart.map((item) =>
+        item.id === productId && item.flavour === flavour && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+    );
+  };
 
   return (
     <>
@@ -48,6 +114,9 @@ function App() {
           setKeyword={setKeyword}
           isHiddenSearchModal={isHiddenSearchModal}
           setHidden={setHidden}
+          isHiddenShoppingCart={isHiddenShoppingCart}
+          setHiddenShopCart={setHiddenShopCart}
+          setBlured={setBlured}
         />
         <Slider slideIndex={slideIndex} setSlideIndex={setSlideIndex} />
         <OurAdvantages />
@@ -69,11 +138,22 @@ function App() {
           setBlured={setBlured}
         />
       </main>
+      <ShoppingCartModal
+        isHiddenShoppingCart={isHiddenShoppingCart}
+        setHiddenShopCart={setHiddenShopCart}
+        setBlured={setBlured}
+        cart={cart}
+        removeFromCart={removeFromCart}
+        increaseQuantityInCart={increaseQuantityInCart}
+        decreaseQuantityInCart={decreaseQuantityInCart}
+      />
       <AddToCartModal
         AddtoCartProd={AddtoCartProd}
         isHiddenModalCard={isHiddenModalCard}
         setHiddenCard={setHiddenCard}
         setBlured={setBlured}
+        addToCart={addToCart}
+        toast={toast}
       />
       <ProductDescriptionModal
         AddtoCartProd={AddtoCartProd}
@@ -81,6 +161,7 @@ function App() {
         setHiddenDescr={setHiddenDescr}
         setBlured={setBlured}
       />
+      {toast.visible && <div className="cart-toast">{toast.message}</div>}
     </>
   );
 }

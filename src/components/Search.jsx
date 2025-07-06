@@ -8,6 +8,9 @@ function Search({
   setKeyword,
   isHiddenSearchModal,
   setHidden,
+  isHiddenShoppingCart,
+  setHiddenShopCart,
+  setBlured,
 }) {
   const popupRef = useRef(null);
 
@@ -31,6 +34,11 @@ function Search({
     }
   };
 
+  const handleOpenShopCart = () => {
+    setHiddenShopCart(isHiddenShoppingCart ? false : true);
+    setBlured(true);
+  };
+
   return (
     <section className="search">
       <div className="container">
@@ -49,7 +57,7 @@ function Search({
             </button>
           </div>
 
-          <button type="button">
+          <button type="button" onClick={handleOpenShopCart}>
             <img
               src="./public/icons/shopping-cart.svg"
               alt="shopping cart icon"
