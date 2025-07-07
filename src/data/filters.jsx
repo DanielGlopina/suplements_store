@@ -24,6 +24,13 @@ const filters = [
       "OstroVit",
       "Applied Nutrition",
     ],
+    brandsImg: [
+      "https://wp.logos-download.com/wp-content/uploads/2023/02/Optimum_Nutrition_Logo.png?dl",
+      "https://proteinhouse.mu/cdn/shop/collections/kevin-levrone-703066.webp?v=1710572478s",
+      "https://waysport.ua/assets/brands/ostrovit.png",
+      "https://waysport.ua/assets/brands/r1.png",
+      "https://sport.wetestyoutrust.com/sites/default/files/styles/medium/public/2020-08/MyProtein_logo_Informed%20Sport.png?itok=QQU1izdZ",
+    ],
     types: [
       "Protein",
       "Creatine",

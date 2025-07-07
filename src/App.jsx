@@ -10,9 +10,11 @@ import Categories from "./components/Categories";
 import AddToCartModal from "./components/AddToCartModal";
 import ProductDescriptionModal from "./components/ProductDescriptionModal";
 import Products from "./components/Products";
+import Footer from "./components/Footer";
 
 //Products Card Data Array Import
 import productCardsData from "./data/productsCardData";
+import PartnerBrands from "./components/PartnerBrands";
 
 function App() {
   const [isHiddenShoppingCart, setHiddenShopCart] = useState(true);
@@ -77,10 +79,10 @@ function App() {
     showToast(`Added to cart: ${product.name} (${product.brand})`);
   };
 
-  const removeFromCart = (productId, flavour) => {
-    setCart(
-      cart.filter(
-        (item) => !(item.id === productId && item.flavour === flavour)
+  const removeFromCart = (productId, flavour, brand) => {
+    setCart((prevCart) =>
+      prevCart.filter(
+        (item) => !(item.id === productId && item.flavour === flavour && item.brand === brand)
       )
     );
   };
@@ -137,6 +139,8 @@ function App() {
           setHiddenDescr={setHiddenDescr}
           setBlured={setBlured}
         />
+        <PartnerBrands />
+        <Footer></Footer>
       </main>
       <ShoppingCartModal
         isHiddenShoppingCart={isHiddenShoppingCart}

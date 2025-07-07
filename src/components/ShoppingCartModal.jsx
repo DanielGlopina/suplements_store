@@ -27,7 +27,7 @@ function ShoppingCartModal({
           </button>
           <h3>Shopping Cart</h3>
           {cart.length === 0 ? (
-            <p>Your cart is empty.</p>
+            <h4>Your cart is empty😿</h4>
           ) : (
             <>
               <ul className="cart-list">
@@ -67,7 +67,9 @@ function ShoppingCartModal({
                     </div>
                     <button
                       className="cart-item-remove-btn"
-                      onClick={() => removeFromCart(item.id, item.flavour)}
+                      onClick={() =>
+                        removeFromCart(item.id, item.flavour, item.brand)
+                      }
                     >
                       Delete
                     </button>
