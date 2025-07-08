@@ -19,6 +19,12 @@ function Slider({ slideIndex, setSlideIndex }) {
       </button>
       <div className="container">
         <div className="slide">
+          <div className="more-info">
+            <button>
+              <img src="public/icons/more-info.svg" alt="more info" />
+            </button>
+            <h3>More Info</h3>
+          </div>
           <div className="product-title">
             <h2>{slide.name}</h2>
             <p>{slide.description}</p>

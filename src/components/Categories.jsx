@@ -6,7 +6,7 @@ import productCardsData from "../data/productsCardData";
 
 function Categories({ setCategoryName, setProducts, setDispCounter }) {
   const setProductsInArr = (elementName) => {
-    setDispCounter(8);
+    setDispCounter(12);
     setCategoryName(elementName);
     setProducts(
       productCardsData.filter((productCard) =>

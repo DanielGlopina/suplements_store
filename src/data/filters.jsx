@@ -25,11 +25,20 @@ const filters = [
       "Applied Nutrition",
     ],
     brandsImg: [
-      "https://wp.logos-download.com/wp-content/uploads/2023/02/Optimum_Nutrition_Logo.png?dl",
-      "https://proteinhouse.mu/cdn/shop/collections/kevin-levrone-703066.webp?v=1710572478s",
-      "https://waysport.ua/assets/brands/ostrovit.png",
-      "https://waysport.ua/assets/brands/r1.png",
-      "https://sport.wetestyoutrust.com/sites/default/files/styles/medium/public/2020-08/MyProtein_logo_Informed%20Sport.png?itok=QQU1izdZ",
+      [
+        "https://wp.logos-download.com/wp-content/uploads/2023/02/Optimum_Nutrition_Logo.png?dl",
+        "https://proteinhouse.mu/cdn/shop/collections/kevin-levrone-703066.webp?v=1710572478s",
+        "https://waysport.ua/assets/brands/ostrovit.png",
+        "https://waysport.ua/assets/brands/r1.png",
+        "https://sport.wetestyoutrust.com/sites/default/files/styles/medium/public/2020-08/MyProtein_logo_Informed%20Sport.png?itok=QQU1izdZ",
+      ],
+      [
+        "https://xplosiv.nz/media/amasty/shopby/option_images/scivationxtendlogo.png",
+        "https://images.seeklogo.com/logo-png/32/3/nutrex-research-logo-png_seeklogo-328527.png",
+        "https://jymsupplementscience.com/cdn/shop/files/JYM_logo_520_2b75f7a8-9147-4da1-afae-ceadb1d55f2a.png?v=1670608939&width=520",
+        "https://images.seeklogo.com/logo-png/32/2/cellucor-logo-png_seeklogo-328531.png",
+        "https://www.iovate.com/wp-content/uploads/logo-muscletetech-1.png",
+      ],
     ],
     types: [
       "Protein",

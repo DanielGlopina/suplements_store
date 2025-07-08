@@ -9,7 +9,7 @@ function OurAdvantages() {
             <img src={"/public/icons/clock.svg"} alt="clock icon" />
             <div className="advantage-description">
               <h3>Quick Delivery</h3>
-              <h4>Your order will arrive within 3 days</h4>
+              <h4>Delivery within 3 days</h4>
             </div>
           </div>
           <div className="advantage-card">

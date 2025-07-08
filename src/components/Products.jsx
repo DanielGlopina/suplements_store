@@ -97,7 +97,7 @@ function Products({
           <button
             type="button"
             className="show-more"
-            onClick={() => setDispCounter((prev) => prev + 8)}
+            onClick={() => setDispCounter((prev) => prev + 12)}
           >
             Show More
           </button>

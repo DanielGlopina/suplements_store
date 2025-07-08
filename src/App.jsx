@@ -31,7 +31,7 @@ function App() {
       productCard.category.includes(categoryName)
     )
   );
-  const [dispCounter, setDispCounter] = useState(8);
+  const [dispCounter, setDispCounter] = useState(12);
   const [cart, setCart] = useState(() => {
     const savedCart = localStorage.getItem("cart");
     return savedCart ? JSON.parse(savedCart) : [];
@@ -82,7 +82,12 @@ function App() {
   const removeFromCart = (productId, flavour, brand) => {
     setCart((prevCart) =>
       prevCart.filter(
-        (item) => !(item.id === productId && item.flavour === flavour && item.brand === brand)
+        (item) =>
+          !(
+            item.id === productId &&
+            item.flavour === flavour &&
+            item.brand === brand
+          )
       )
     );
   };
@@ -104,6 +109,8 @@ function App() {
       )
     );
   };
+
+  const [isFirstPageActual, setBrandPage] = useState(true);
 
   return (
     <>
@@ -139,7 +146,10 @@ function App() {
           setHiddenDescr={setHiddenDescr}
           setBlured={setBlured}
         />
-        <PartnerBrands />
+        <PartnerBrands
+          isFirstPageActual={isFirstPageActual}
+          setBrandPage={setBrandPage}
+        />
         <Footer></Footer>
       </main>
       <ShoppingCartModal
