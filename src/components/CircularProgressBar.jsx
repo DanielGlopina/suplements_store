@@ -10,12 +10,16 @@ function CircularProgressBar({ paramName, param }) {
           <div>{param}%</div>
         </div>
         <div className="circle">
-          <div className="zero-dot">
-            <span></span>
-          </div>
-          <div className="dot">
-            <span></span>
-          </div>
+          {param === 0 && (
+            <div className="zero-dot">
+              <span></span>
+            </div>
+          )}
+          {param > 0 && (
+            <div className="dot">
+              <span></span>
+            </div>
+          )}
           <div className="bar left">
             <div className="left progress"></div>
           </div>
