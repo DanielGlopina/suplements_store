@@ -32,7 +32,7 @@ function ProductDescriptionModal({
             onClick={handleCloseModal}
             aria-label="Close"
           >
-            <img src="public/icons/close-btn.svg" alt="close button" />
+            <img src="icons/close-btn.svg" alt="close button" />
           </button>
 
           {/* Product name and brand */}

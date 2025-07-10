@@ -6,13 +6,13 @@ function Footer() {
         <div className="footer-content">
           <div className="partners">
             <div className="delivery-partners">
-              <img src="/public/img/nova-poshta-logo.png" alt="nova poshta" />
-              <img src="/public/img/ukrposhta-logo.png" alt="ukrposhta" />
+              <img src="img/nova-poshta-logo.png" alt="nova poshta" />
+              <img src="img/ukrposhta-logo.png" alt="ukrposhta" />
             </div>
             <span>Our Partners</span>
             <div className="bank-partners">
-              <img src="/public/img/visa-logo.png" alt="visa" />
-              <img src="/public/img/master-card-logo.png" alt="master card" />
+              <img src="img/visa-logo.png" alt="visa" />
+              <img src="img/master-card-logo.png" alt="master card" />
             </div>
           </div>
           <p>

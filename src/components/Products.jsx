@@ -3,7 +3,7 @@ import SortPanel from "./SortPanel";
 // Fallback image handler
 const imgError = (e) => {
   e.target.onerror = null;
-  e.target.src = "public/img/alternative-image.jpg";
+  e.target.src = "img/alternative-image.jpg";
 };
 
 /**
@@ -74,7 +74,7 @@ function Products({
                   <div className="flavours">
                     {productData.flavour.map((flavour) => (
                       <img
-                        src={`public/img/${flavour}-flavour.jpg`}
+                        src={`img/${flavour}-flavour.jpg`}
                         alt={`${flavour} icon`}
                         title={flavour}
                         key={flavour}
@@ -85,10 +85,10 @@ function Products({
                 </div>
                 <div className="buttons">
                   <button type="button" onClick={() => handleProdDescr(productData)}>
-                    <img src="public/icons/more-info.svg" alt="More info" />
+                    <img src="icons/more-info.svg" alt="More info" />
                   </button>
                   <button type="button" onClick={() => handleAddToCart(productData)}>
-                    <img src="public/icons/shopping-cart.svg" alt="Add to shopping cart" />
+                    <img src="icons/shopping-cart.svg" alt="Add to shopping cart" />
                   </button>
                 </div>
               </div>

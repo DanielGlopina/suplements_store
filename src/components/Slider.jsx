@@ -38,13 +38,13 @@ function Slider({ slideIndex, setSlideIndex }) {
   return (
     <section className={`slider ${slide.color}`}>
       <button type="button" onClick={handlePrev}>
-        <img src="./public/icons/arrow-back.svg" alt="arrow-back" />
+        <img src="icons/arrow-back.svg" alt="arrow-back" />
       </button>
       <div className="container">
         <div className="slide">
           <div className="more-info">
             <button onClick={openDescr}>
-              <img src="public/icons/more-info.svg" alt="more info" />
+              <img src="icons/more-info.svg" alt="more info" />
             </button>
             <h3>More Info</h3>
             <div
@@ -58,7 +58,7 @@ function Slider({ slideIndex, setSlideIndex }) {
                 onClick={closeDescr}
                 aria-label="Close"
               >
-                <img src="public/icons/close-btn.svg" alt="close button" />
+                <img src="icons/close-btn.svg" alt="close button" />
               </button>
               <h2>{slide.name}</h2>
               <p>{slide.description}</p>

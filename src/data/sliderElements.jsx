@@ -1,7 +1,7 @@
 const sliderElements = [
   {
     name: "Psychotic Hellboy (Insane Labz)",
-    img: "./public/img/psychotic-pretrain.png",
+    img: "img/psychotic-pretrain.png",
     color: "dark-red",
     description:
       "A high-stimulant pre-workout designed for intense energy, focus, and pump. Ideal for advanced athletes seeking maximum performance.",
@@ -13,7 +13,7 @@ const sliderElements = [
   },
   {
     name: "Elite 100% Whey (Dymatize)",
-    img: "./public/img/elite-protein-powder.png",
+    img: "img/elite-protein-powder.png",
     color: "light-blue",
     description:
       "Premium quality whey protein with fast absorption and excellent amino acid profile.",
@@ -25,7 +25,7 @@ const sliderElements = [
   },
   {
     name: "Rule 1 Mass Gainer",
-    img: "./public/img/r1-gainer.png",
+    img: "img/r1-gainer.png",
     color: "dark-green",
     description:
       "Rich in carbohydrates and protein, ideal for bulking phases and post-workout nutrition.",

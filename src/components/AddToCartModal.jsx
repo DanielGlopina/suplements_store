@@ -37,7 +37,7 @@ function AddToCartModal({
         <div className="add-modal-content">
           {/* Close modal button */}
           <button className="close-modal-btn" onClick={close}>
-            <img src="public/icons/close-btn.svg" alt="close" />
+            <img src="icons/close-btn.svg" alt="close" />
           </button>
           {/* Product image */}
           <img src={AddtoCartProd.img} alt={AddtoCartProd.name} />

@@ -85,8 +85,8 @@ function SortPanel({ setProducts }) {
               <img
                 src={
                   isHiddenPanel
-                    ? "/public/icons/arrow-up.svg"
-                    : "/public/icons/arrow-down.svg"
+                    ? "icons/arrow-up.svg"
+                    : "icons/arrow-down.svg"
                 }
                 alt="toggle sort panel"
               />
