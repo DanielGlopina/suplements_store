@@ -1,31 +1,28 @@
-//Links
+// ====== LINKS ======
 @import "https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
-//Fonts
+// ====== FONTS ======
 $primary-title-font: "Rajdhani", sans-serif;
 $roboto-font: "Roboto", sans-serif;
 
-//Colors
+// ====== COLORS ======
 $header-bg-color: #0a0a0a;
 $body-bg-color: rgb(12, 12, 12);
 $color-primary-light: rgb(231, 224, 224);
 $card-bg-dark-color: rgb(19, 18, 18);
 
-//templates
+// ====== PROGRESS BAR TEMPLATE ======
 %progress-bar-template {
   font-family: $roboto-font;
-
   * {
     text-align: center;
   }
-
   .circular {
     height: 100px;
     width: 100px;
     position: relative;
   }
-
   .inner,
   .outer,
   .circle {
@@ -59,21 +56,19 @@ $card-bg-dark-color: rgb(19, 18, 18);
   .numb-title {
     font-size: 12px;
   }
-  .bar {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    -webkit-border-radius: 100%;
-    clip: rect(0px, 100px, 100px, 50px);
-  }
+  .bar,
   .progress {
     position: absolute;
     height: 100%;
     width: 100%;
     -webkit-border-radius: 100%;
+  }
+  .bar {
+    clip: rect(0px, 100px, 100px, 50px);
+  }
+  .progress {
     clip: rect(0px, 50px, 100px, 0px);
   }
-
   .left.progress {
     z-index: 1;
     animation: left 1s linear both;
@@ -83,7 +78,6 @@ $card-bg-dark-color: rgb(19, 18, 18);
       transform: rotate(180deg);
     }
   }
-
   .bar.right {
     z-index: 3;
     transform: rotate(180deg);
@@ -97,26 +91,24 @@ $card-bg-dark-color: rgb(19, 18, 18);
       transform: rotate(135deg);
     }
   }
-
-  .dot {
+  .dot,
+  .zero-dot {
     z-index: 2;
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 50%;
     height: 10px;
     margin-top: -5px;
-    animation: dot 2s linear both;
     transform-origin: 0% 50%;
+  }
+  .dot {
+    width: 50%;
+    animation: dot 2s linear both;
   }
   .zero-dot {
     z-index: 100;
-    position: absolute;
     top: 5px;
     left: 55%;
-    height: 10px;
-    margin-top: -5px;
-    transform-origin: 0% 50%;
   }
   .zero-dot span,
   .dot span {
@@ -126,7 +118,6 @@ $card-bg-dark-color: rgb(19, 18, 18);
     height: 10px;
     border-radius: 100%;
   }
-
   @keyframes dot {
     0% {
       transform: rotate(-90deg);
@@ -142,35 +133,31 @@ $card-bg-dark-color: rgb(19, 18, 18);
   }
 }
 
+// ====== PROGRESS BAR PERCENTAGE EXTENSIONS ======
+// 82% & 80%
 .progress-82,
 .progress-80 {
   @extend %progress-bar-template;
-
   .left.progress {
     animation: left-82 1s linear forwards;
   }
-
   .right.progress {
     animation: right-82 1s linear forwards;
     animation-delay: 1s;
   }
-
   .dot {
     animation: dot-82 2s linear forwards;
   }
-
   @keyframes left-82 {
     100% {
       transform: rotate(180deg);
     }
   }
-
   @keyframes right-82 {
     100% {
-      transform: rotate(115.2deg); // (82 - 50) * 3.6
+      transform: rotate(115.2deg);
     }
   }
-
   @keyframes dot-82 {
     0% {
       transform: rotate(-90deg);
@@ -185,34 +172,26 @@ $card-bg-dark-color: rgb(19, 18, 18);
     }
   }
 }
-
-//PROGRESS PERCENTS
-
-//5-6%
+// 5-6%
 %progress-5-6 {
   @extend %progress-bar-template;
   .left.progress {
     display: none;
   }
-
   .bar.right {
     transform: rotate(0deg);
   }
-
   .right.progress {
     animation: rotate-right-6 1s linear forwards;
   }
-
   .dot {
     animation: rotate-dot-6 1s linear forwards;
   }
-
   @keyframes rotate-right-6 {
     100% {
       transform: rotate(21.6deg);
     }
   }
-
   @keyframes rotate-dot-6 {
     0% {
       transform: rotate(-90deg);
@@ -222,33 +201,26 @@ $card-bg-dark-color: rgb(19, 18, 18);
     }
   }
 }
-
-//10%
+// 10%
 %progress-10 {
   @extend %progress-bar-template;
-
   .left.progress {
     display: none;
   }
-
   .bar.right {
     transform: rotate(0deg);
   }
-
   .right.progress {
     animation: rotate-right-10 1s linear forwards;
   }
-
   .dot {
     animation: rotate-dot-10 1s linear forwards;
   }
-
   @keyframes rotate-right-10 {
     100% {
       transform: rotate(36deg);
     }
   }
-
   @keyframes rotate-dot-10 {
     0% {
       transform: rotate(-90deg);
@@ -258,33 +230,26 @@ $card-bg-dark-color: rgb(19, 18, 18);
     }
   }
 }
-
-//13%
+// 13%
 %progress-13 {
   @extend %progress-bar-template;
-
   .left.progress {
     display: none;
   }
-
   .bar.right {
     transform: rotate(0deg);
   }
-
   .right.progress {
     animation: rotate-right-13 1s linear forwards;
   }
-
   .dot {
     animation: rotate-dot-13 1s linear forwards;
   }
-
   @keyframes rotate-right-13 {
     100% {
       transform: rotate(46.8deg);
     }
   }
-
   @keyframes rotate-dot-13 {
     0% {
       transform: rotate(-90deg);
@@ -294,33 +259,26 @@ $card-bg-dark-color: rgb(19, 18, 18);
     }
   }
 }
-
-//30%
+// 30%
 %progress-30 {
   @extend %progress-bar-template;
-
   .left.progress {
     display: none;
   }
-
   .bar.right {
     transform: rotate(0deg);
   }
-
   .right.progress {
     animation: rotate-right-30 1s linear forwards;
   }
-
   .dot {
     animation: rotate-dot-30 1s linear forwards;
   }
-
   @keyframes rotate-right-30 {
     100% {
       transform: rotate(108deg);
     }
   }
-
   @keyframes rotate-dot-30 {
     0% {
       transform: rotate(-90deg);
@@ -330,34 +288,26 @@ $card-bg-dark-color: rgb(19, 18, 18);
     }
   }
 }
-
-//40%
-
+// 40%
 %progress-40 {
   @extend %progress-bar-template;
-
   .left.progress {
     display: none;
   }
-
   .bar.right {
     transform: rotate(0deg);
   }
-
   .right.progress {
     animation: rotate-right-40 1s linear forwards;
   }
-
   .dot {
     animation: rotate-dot-40 1s linear forwards;
   }
-
   @keyframes rotate-right-40 {
     100% {
       transform: rotate(144deg);
     }
   }
-
   @keyframes rotate-dot-40 {
     0% {
       transform: rotate(-90deg);
@@ -367,8 +317,7 @@ $card-bg-dark-color: rgb(19, 18, 18);
     }
   }
 }
-
-//Modal template
+// ====== MODAL TEMPLATE ======
 %modal-template {
   position: relative;
   z-index: 1001;
@@ -376,10 +325,9 @@ $card-bg-dark-color: rgb(19, 18, 18);
   flex-direction: column;
   max-width: 370px;
   background-color: rgb(31, 29, 29);
-  padding: 10px 20px 10px 20px;
+  padding: 10px 20px;
   border-radius: 20px;
   margin: 0 auto;
-
   .close-modal-btn {
     align-self: flex-end;
     background-color: rgb(31, 29, 29);
@@ -394,19 +342,17 @@ $card-bg-dark-color: rgb(19, 18, 18);
     color: $color-primary-light;
     margin: 2px;
   }
-
   h3 {
     font-size: 20px;
     margin-bottom: 10px;
   }
-
   h4 {
     font-size: 15px;
     font-weight: 500;
     margin: 5px 0;
   }
 }
-
+// ====== ADD MODAL OVERLAY ======
 %add-modal {
   position: fixed;
   top: 0;

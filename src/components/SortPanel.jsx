@@ -1,8 +1,13 @@
-import "../index.scss";
+import { useState, useEffect } from "react";
 import filters from "../data/filters";
 import productCardsData from "../data/productsCardData";
-import { useState, useEffect } from "react";
 
+/**
+ * SortPanel component.
+ * Allows filtering products by price, brand, type, and flavour.
+ *
+ * @param {Function} setProducts - Sets filtered products.
+ */
 function SortPanel({ setProducts }) {
   const [isHiddenPanel, setHiddenState] = useState(false);
   const [selectedBrand, setSelectedBrand] = useState("");
@@ -11,6 +16,7 @@ function SortPanel({ setProducts }) {
   const [priceFrom, setPriceFrom] = useState("");
   const [priceTo, setPriceTo] = useState("");
 
+  // Filter products on any filter change
   useEffect(() => {
     let filtered = productCardsData;
     if (selectedBrand) {
@@ -31,6 +37,7 @@ function SortPanel({ setProducts }) {
     setProducts(filtered);
   }, [selectedBrand, selectedType, selectedFlavour, priceFrom, priceTo, setProducts]);
 
+  // Reset all filters
   const handleClearAll = () => {
     setSelectedBrand("");
     setSelectedType("");
@@ -40,35 +47,33 @@ function SortPanel({ setProducts }) {
     setProducts(productCardsData);
   };
 
-  // Функции для подсчёта количества с учётом остальных фильтров
-  const getBrandCount = (brand) => {
-    return productCardsData.filter((prod) =>
-      // Все фильтры, кроме бренда
+  // Get count for each filter option, considering other filters
+  const getBrandCount = (brand) =>
+    productCardsData.filter((prod) =>
       (!selectedType || prod.category.includes(selectedType)) &&
       (!selectedFlavour || prod.flavour.includes(selectedFlavour)) &&
       (!priceFrom || Number(prod.price) >= Number(priceFrom)) &&
       (!priceTo || Number(prod.price) <= Number(priceTo)) &&
       prod.category.includes(brand)
     ).length;
-  };
-  const getTypeCount = (type) => {
-    return productCardsData.filter((prod) =>
+
+  const getTypeCount = (type) =>
+    productCardsData.filter((prod) =>
       (!selectedBrand || prod.category.includes(selectedBrand)) &&
       (!selectedFlavour || prod.flavour.includes(selectedFlavour)) &&
       (!priceFrom || Number(prod.price) >= Number(priceFrom)) &&
       (!priceTo || Number(prod.price) <= Number(priceTo)) &&
       prod.category.includes(type)
     ).length;
-  };
-  const getFlavourCount = (flavour) => {
-    return productCardsData.filter((prod) =>
+
+  const getFlavourCount = (flavour) =>
+    productCardsData.filter((prod) =>
       (!selectedBrand || prod.category.includes(selectedBrand)) &&
       (!selectedType || prod.category.includes(selectedType)) &&
       (!priceFrom || Number(prod.price) >= Number(priceFrom)) &&
       (!priceTo || Number(prod.price) <= Number(priceTo)) &&
       prod.flavour.includes(flavour)
     ).length;
-  };
 
   return (
     <div className="sort-panel">
@@ -76,14 +81,14 @@ function SortPanel({ setProducts }) {
         <div className="panel-content">
           <div className="panel-title">
             <h2>Sort By</h2>
-            <button onClick={() => setHiddenState(isHiddenPanel ? false : true)}>
+            <button onClick={() => setHiddenState(!isHiddenPanel)}>
               <img
                 src={
                   isHiddenPanel
                     ? "/public/icons/arrow-up.svg"
                     : "/public/icons/arrow-down.svg"
                 }
-                alt=""
+                alt="toggle sort panel"
               />
             </button>
           </div>
@@ -94,9 +99,21 @@ function SortPanel({ setProducts }) {
             <h3>Price</h3>
             <div className="price-inputs">
               <h4>from</h4>
-              <input type="number" min={0} placeholder="0" value={priceFrom} onChange={e => setPriceFrom(e.target.value)} />
+              <input
+                type="number"
+                min={0}
+                placeholder="0"
+                value={priceFrom}
+                onChange={e => setPriceFrom(e.target.value)}
+              />
               <h4>to</h4>
-              <input type="number" min={0} placeholder="0" value={priceTo} onChange={e => setPriceTo(e.target.value)} />
+              <input
+                type="number"
+                min={0}
+                placeholder="0"
+                value={priceTo}
+                onChange={e => setPriceTo(e.target.value)}
+              />
             </div>
           </div>
 

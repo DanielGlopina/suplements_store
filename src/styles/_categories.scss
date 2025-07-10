@@ -1,0 +1,48 @@
+@use "./variables" as *;
+.categories {
+  color: $color-primary-light;
+  font-family: $primary-title-font;
+  text-align: center;
+  h2 {
+    font-weight: 500;
+    font-size: 35px;
+    margin-bottom: 10px;
+  }
+}
+.categories-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  * {
+    margin: 0;
+  }
+  .category-card {
+    min-width: 12%;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $card-bg-dark-color;
+    border-radius: 10px;
+    transition: transform 0.5s, background 0.5s;
+    cursor: pointer;
+    &:hover {
+      transform: translateY(-7px);
+    }
+    img {
+      display: block;
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 5px 6px rgba(255, 255, 255, 0.45));
+      min-height: 60px;
+      max-height: 90px;
+    }
+    h3 {
+      margin-top: 10px;
+      font-weight: 300;
+      font-family: $roboto-font;
+      color: $color-primary-light;
+    }
+  }
+}

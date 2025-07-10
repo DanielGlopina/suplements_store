@@ -1,6 +1,17 @@
-import "../index.scss";
-import { useState } from "react";
+import React from "react";
 
+/**
+ * ShoppingCartModal component.
+ * Displays the shopping cart modal with product list, quantity controls, and total.
+ *
+ * @param {boolean} isHiddenShoppingCart - Modal visibility flag.
+ * @param {Function} setHiddenShopCart - Function to hide modal.
+ * @param {Function} setBlured - Function to remove blur from background.
+ * @param {Array} cart - Array of cart items.
+ * @param {Function} removeFromCart - Removes item from cart.
+ * @param {Function} increaseQuantityInCart - Increases item quantity.
+ * @param {Function} decreaseQuantityInCart - Decreases item quantity.
+ */
 function ShoppingCartModal({
   isHiddenShoppingCart,
   setHiddenShopCart,
@@ -10,18 +21,28 @@ function ShoppingCartModal({
   increaseQuantityInCart,
   decreaseQuantityInCart,
 }) {
+  // Close modal and remove blur
   const handleCloseModal = () => {
-    setHiddenShopCart(isHiddenShoppingCart ? false : true);
+    setHiddenShopCart(true);
     setBlured(false);
   };
+
+  // Calculate total price
+  const total = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+
   return (
-    <div className={`add-modal ${isHiddenShoppingCart ? "hidden" : ""}`}>
+    <div className={`add-modal${isHiddenShoppingCart ? " hidden" : ""}`}>
       <div className="container">
         <div className="shopping-cart-modal">
+          {/* Close modal button */}
           <button
             type="button"
             className="close-modal-btn"
             onClick={handleCloseModal}
+            aria-label="Close"
           >
             <img src="public/icons/close-btn.svg" alt="close button" />
           </button>
@@ -50,6 +71,7 @@ function ShoppingCartModal({
                           onClick={() =>
                             decreaseQuantityInCart(item.id, item.flavour)
                           }
+                          aria-label="Decrease quantity"
                         >
                           -
                         </button>
@@ -59,6 +81,7 @@ function ShoppingCartModal({
                           onClick={() =>
                             increaseQuantityInCart(item.id, item.flavour)
                           }
+                          aria-label="Increase quantity"
                         >
                           +
                         </button>
@@ -70,6 +93,7 @@ function ShoppingCartModal({
                       onClick={() =>
                         removeFromCart(item.id, item.flavour, item.brand)
                       }
+                      aria-label="Remove from cart"
                     >
                       Delete
                     </button>
@@ -79,14 +103,9 @@ function ShoppingCartModal({
               <div className="cart-total">
                 <span>Total:</span>
                 <span style={{ fontWeight: 600, fontSize: "20px" }}>
-                  {cart.reduce(
-                    (sum, item) => sum + item.price * item.quantity,
-                    0
-                  )}
-                  ₴
+                  {total}₴
                 </span>
               </div>
-
               <button type="button" className="add-cart-btn">
                 Proceed To Payment{" "}
                 <img src="public/icons/shopping-cart.svg" alt="shopping cart" />

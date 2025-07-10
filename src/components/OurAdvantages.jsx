@@ -1,5 +1,3 @@
-import "../index.scss";
-
 function OurAdvantages() {
   return (
     <section className="our-advantages">

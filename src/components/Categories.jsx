@@ -1,16 +1,24 @@
-import "../index.scss";
 //Categories Elements Array Import
 import categoriesElements from "../data/categoriesElements";
 //Product Cards Data Array Import
 import productCardsData from "../data/productsCardData";
 
+/**
+ * Categories section component.
+ * Renders a list of product categories and handles category selection.
+ *
+ * @param {Function} setCategoryName - Sets the current category name.
+ * @param {Function} setProducts - Sets the filtered products array.
+ * @param {Function} setDispCounter - Resets the display counter for products.
+ */
 function Categories({ setCategoryName, setProducts, setDispCounter }) {
-  const setProductsInArr = (elementName) => {
+  // Handle category selection: reset counter, set category, filter products
+  const handleCategorySelect = (categoryName) => {
     setDispCounter(12);
-    setCategoryName(elementName);
+    setCategoryName(categoryName);
     setProducts(
-      productCardsData.filter((productCard) =>
-        productCard.category.includes(elementName)
+      productCardsData.filter((product) =>
+        product.category.includes(categoryName)
       )
     );
   };
@@ -20,17 +28,17 @@ function Categories({ setCategoryName, setProducts, setDispCounter }) {
       <h2>Categories</h2>
       <div className="container">
         <div className="categories-box">
-          {categoriesElements.map((element) => (
-            <div
-              key={element.id}
+          {categoriesElements.map(({ id, img, name }) => (
+            <button
+              key={id}
               className="category-card"
-              onClick={() => {
-                setProductsInArr(element.name);
-              }}
+              type="button"
+              onClick={() => handleCategorySelect(name)}
+              aria-label={`Show products in ${name} category`}
             >
-              <img src={element.img} alt={element.name} />
-              <h3>{element.name}</h3>
-            </div>
+              <img src={img} alt={name} />
+              <h3>{name}</h3>
+            </button>
           ))}
         </div>
       </div>

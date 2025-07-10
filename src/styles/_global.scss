@@ -1,0 +1,181 @@
+@use "./variables" as *;
+// ====== GLOBAL ======
+body {
+  margin: 0;
+  background-color: $body-bg-color;
+}
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+.hidden {
+  display: none !important;
+}
+.no-scroll {
+  overflow: hidden !important;
+  height: 100vh;
+}
+.blured,
+main.blured {
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+  transition: filter 0.3s;
+}
+button {
+  border: none;
+  cursor: pointer;
+}
+input,
+select,
+option {
+  background-color: $body-bg-color;
+  outline: none;
+  border: 1px solid $color-primary-light;
+  color: $color-primary-light;
+}
+.cart-toast {
+  position: fixed;
+  left: 50%;
+  top: 40px;
+  transform: translateX(-50%);
+  background: orangered;
+  color: #fff;
+  font-family: $primary-title-font;
+  font-size: 20px;
+  padding: 16px 32px;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+  z-index: 1000;
+  opacity: 1;
+  animation: toast-fade-in 0.3s, toast-fade-out 0.5s 1.7s;
+}
+@keyframes toast-fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+@keyframes toast-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.advantages-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  .advantage-card {
+    display: flex;
+    align-items: center;
+    margin: 20px auto;
+    img {
+      max-width: 50px;
+    }
+  }
+  h3,
+  h4 {
+    font-family: $primary-title-font;
+    font-weight: 500;
+    margin: 0;
+    color: $color-primary-light;
+  }
+}
+// ====== SEARCH ======
+.search {
+  position: relative;
+  background-color: $body-bg-color;
+  padding: 15px 0;
+  .popular-searches {
+    width: 300px;
+    position: absolute;
+    z-index: 10;
+    background-color: $body-bg-color;
+    border-right: 1px solid $color-primary-light;
+    border-left: 1px solid $color-primary-light;
+    ul {
+      margin: 0;
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      height: 25px;
+      border-bottom: 1px solid $color-primary-light;
+      button {
+        width: 100%;
+        text-align: left;
+        font-size: 17px;
+        font-family: $roboto-font;
+        font-weight: 300;
+        color: $color-primary-light;
+        background-color: $body-bg-color;
+      }
+    }
+  }
+}
+.search-content {
+  display: flex;
+  * {
+    max-height: 45px;
+  }
+  img {
+    max-width: 35px;
+  }
+  button {
+    background-color: $body-bg-color;
+    margin-left: auto;
+  }
+  .search-input {
+    width: 50%;
+    display: flex;
+    input,
+    button {
+      background-color: rgb(21, 21, 21);
+    }
+    input {
+      width: 100%;
+      font-family: $roboto-font;
+      padding: 5px 20px;
+      color: $color-primary-light;
+      border: 1px solid $color-primary-light;
+      border-right: none;
+    }
+    button {
+      display: flex;
+      align-items: center;
+      border: 1px solid $color-primary-light;
+      border-left: none;
+      img {
+        max-width: 25px;
+      }
+    }
+  }
+}
+// ====== PROGRESS BAR ======
+.progress-bar {
+  @extend %progress-bar-template;
+}
+.progress-6,
+.progress-5 {
+  @extend %progress-5-6;
+}
+.progress-10 {
+  @extend %progress-10;
+}
+.progress-13 {
+  @extend %progress-13;
+}
+.progress-30 {
+  @extend %progress-30;
+}
+.progress-40 {
+  @extend %progress-40;
+}
+// ====== ADVANTAGES ======

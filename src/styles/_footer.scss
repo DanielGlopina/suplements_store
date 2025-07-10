@@ -1,0 +1,33 @@
+@use "./variables" as *;
+footer {
+  margin-top: 60px;
+  background-color: $header-bg-color;
+  font-family: $primary-title-font;
+  color: $color-primary-light;
+  text-align: center;
+  h3 {
+    font-weight: 200;
+    background-color: rgb(11, 11, 11);
+    padding: 10px 0;
+  }
+}
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  .partners,
+  .delivery-partners,
+  .bank-partners {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img {
+      height: 42px;
+      max-width: 70px;
+      margin: 0 10px;
+      background-color: white;
+    }
+    span {
+      font-size: 30px;
+    }
+  }
+}

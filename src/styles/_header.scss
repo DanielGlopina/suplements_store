@@ -1,0 +1,38 @@
+@use "./variables" as *;
+.header-content,
+.title-main,
+.contacts {
+  display: flex;
+  align-items: center;
+}
+.header-content {
+  justify-content: space-between;
+  color: $color-primary-light;
+  font-family: $primary-title-font;
+  .title-main {
+    flex-direction: column;
+    align-items: start;
+    * {
+      margin: 0;
+      font-size: 25px;
+    }
+    h1 {
+      font-size: 40px;
+    }
+  }
+  .contacts {
+    gap: 6px;
+    a {
+      text-decoration: none;
+      color: $color-primary-light;
+      font-size: 20px;
+      img {
+        max-width: 40px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+header {
+  background-color: $header-bg-color;
+}

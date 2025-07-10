@@ -1,0 +1,166 @@
+@use "./variables" as *;
+.products-section {
+  text-align: center;
+  .sort-panel {
+    padding-bottom: 20px;
+    .panel-content .panel-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      h2 {
+        font-size: 25px;
+      }
+      * {
+        margin: 0;
+      }
+      button {
+        height: 25px;
+        background-color: $body-bg-color;
+        img {
+          height: 20px;
+        }
+      }
+    }
+    .panel-filters {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      * {
+        select {
+          height: 25px;
+        }
+      }
+      h3 {
+        margin: 3px;
+        color: $color-primary-light;
+        font-family: $primary-title-font;
+        font-weight: 400;
+      }
+      button {
+        background-color: $body-bg-color;
+        color: $color-primary-light;
+        font-size: 20px;
+        font-family: $primary-title-font;
+        font-weight: 400;
+        align-self: flex-end;
+      }
+      .price-filter .price-inputs {
+        height: 25px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        input {
+          width: 80px;
+          height: 85%;
+        }
+        h4 {
+          color: $color-primary-light;
+          font-family: $primary-title-font;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+  h2,
+  .no-products-title {
+    font-family: $primary-title-font;
+    color: $color-primary-light;
+    font-size: 35px;
+    font-weight: 400;
+    margin: 10px;
+  }
+  .no-products-title {
+    font-size: 25px;
+  }
+  .products-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    .product-card {
+      cursor: pointer;
+      background-color: $card-bg-dark-color;
+      font-family: $primary-title-font;
+      text-align: start;
+      color: $color-primary-light;
+      border-radius: 20px;
+      h4 {
+        font-weight: 300;
+      }
+      img {
+        max-width: 100%;
+        max-height: 250px;
+        border-radius: 20px 20px 0 0;
+        background: url(/public/img/product-card-bg.jpg) center center / cover
+          no-repeat;
+      }
+      div {
+        display: flex;
+        align-items: center;
+        * {
+          margin: 2px 0;
+        }
+        button {
+          display: flex;
+          justify-content: center;
+          width: 35px;
+          height: 35px;
+          margin-left: auto;
+          margin-right: 10px;
+          background-color: rgb(31, 29, 29);
+          img {
+            max-width: 25px;
+            background: none;
+          }
+        }
+        button:hover {
+          background: orangered;
+        }
+      }
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        gap: 10px;
+      }
+      .flavours {
+        display: flex;
+        justify-content: left;
+        gap: 10px;
+        img {
+          max-height: 30px;
+          max-width: 30px;
+          border-radius: 0;
+        }
+      }
+      .product-description {
+        flex-direction: column;
+        align-items: start;
+        margin-left: 15px;
+        .price {
+          margin-top: 10px;
+          font-size: 25px;
+          font-weight: 500;
+        }
+        .weight {
+          font-weight: 500;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .show-more {
+    height: 50px;
+    width: 200px;
+    color: $color-primary-light;
+    background-color: orangered;
+    font-size: 20px;
+    font-family: $primary-title-font;
+    border-radius: 10px;
+    margin-top: 50px;
+    transition: transform 0.5s, background 0.5s;
+    &:hover {
+      box-shadow: 0 0 12px rgba(250, 252, 251, 0.8);
+      background-color: $card-bg-dark-color;
+    }
+  }
+}

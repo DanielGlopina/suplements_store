@@ -1,5 +1,3 @@
-import "../index.scss";
-
 function Header() {
   return (
     <header>
