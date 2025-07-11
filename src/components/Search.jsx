@@ -79,11 +79,14 @@ function Search({
               onChange={(e) => setKeyword(e.target.value)}
             />
             <button type="button" onClick={() => searchProduct()}>
-              <img src="https://icons.veryicon.com/png/o/miscellaneous/light-e-treasure-3/search-286.png" alt="search icon" />
+              <img src="icons/search-icon.svg" alt="search icon" />
             </button>
           </div>
           <button type="button" onClick={handleOpenShopCart}>
-          <img src="https://pngimg.com/d/shopping_cart_PNG4.png" alt="Add to shopping cart" />
+            <img
+              src="icons/shopping-cart.svg"
+              alt="shopping cart icon"
+            />
           </button>
         </div>
         <div
