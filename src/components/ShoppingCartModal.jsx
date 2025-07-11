@@ -108,7 +108,7 @@ function ShoppingCartModal({
               </div>
               <button type="button" className="add-cart-btn">
                 Proceed To Payment{" "}
-                <img src="icons/shopping-cart.svg" alt="shopping cart" />
+                <img src="https://pngimg.com/d/shopping_cart_PNG4.png" alt="shopping cart" />
               </button>
             </>
           )}

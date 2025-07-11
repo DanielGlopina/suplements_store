@@ -38,7 +38,7 @@ function Slider({ slideIndex, setSlideIndex }) {
   return (
     <section className={`slider ${slide.color}`}>
       <button type="button" onClick={handlePrev}>
-        <img src="icons/arrow-back.svg" alt="arrow-back" />
+        <img src="https://symbl.cc/i/webp/b3/3579924016d408fe7632fddc7a8145.webp" alt="arrow-back" />
       </button>
       <div className="container">
         <div className="slide">
@@ -82,7 +82,7 @@ function Slider({ slideIndex, setSlideIndex }) {
         </div>
       </div>
       <button type="button" onClick={handleNext}>
-        <img src="icons/arrow-forward.svg?v=1" alt="arrow forward" />
+        <img src="https://symbl.cc/i/webp/1e/e97b5050a25455d87c59005fc706e2.webp" alt="arrow forward" />
       </button>
     </section>
   );
