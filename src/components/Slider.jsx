@@ -48,9 +48,7 @@ function Slider({ slideIndex, setSlideIndex }) {
             </button>
             <h3>More Info</h3>
             <div
-              className={`description-modal ${
-                isDescrHidden ? "hidden" : ""
-              }`}
+              className={`description-modal ${isDescrHidden ? "hidden" : ""}`}
             >
               <button
                 type="button"
@@ -72,11 +70,7 @@ function Slider({ slideIndex, setSlideIndex }) {
             <img src={slide.img} alt={slide.name} />
           </div>
           <div className="macros-ammount">
-            <h2>
-              {slideIndex === 0
-                ? "Of daily allowance:"
-                : "Per serving:"}
-            </h2>
+            <h2>{slideIndex === 0 ? "Of daily allowance:" : "Per serving:"}</h2>
             {slide.macrosArr.map(([paramName, param], i) => (
               <CircularProgressBar
                 paramName={paramName}
@@ -88,7 +82,7 @@ function Slider({ slideIndex, setSlideIndex }) {
         </div>
       </div>
       <button type="button" onClick={handleNext}>
-        <img src="./public/icons/arrow-forward.svg" alt="arrow-forward" />
+        <img src="icons/arrow-forward.svg" alt="arrow forward" />
       </button>
     </section>
   );
