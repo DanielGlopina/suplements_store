@@ -1,12 +1,53 @@
-# React + Vite
+# PowerUp™ Nutrition 🏋️‍♂️ — Sports Nutrition Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A showcase for an online sports nutrition store built with React + Vite.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- 🗂️ Browse products by categories
+- 🔍 Search and filter products
+- 🛒 Add products to cart with flavour and quantity selection
+- 📄 View detailed product descriptions
+- 🎯 Product slider with featured items
+- ⭐ Store advantages section
+- 🤝 Partner brands showcase
+- 💬 Modal windows for cart, search, and product details
+- 💾 Cart is saved in localStorage
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📁 Project Structure
+- **src/components/** — Main UI components (Header, Footer, Products, Categories, Slider, ShoppingCartModal, AddToCartModal, ProductDescriptionModal, Search, OurAdvantages, PartnerBrands, SortPanel)
+- **src/data/** — Data for product cards, categories, filters, slider
+- **public/img/**, **public/icons/** — Images and icons
+- **src/styles/** — SCSS styles
 
-## Expanding the ESLint configuration
+## 🛠️ Local Development
+1. Install dependencies:
+   ```sh
+   npm install
+   ```
+2. Start the project:
+   ```sh
+   npm run dev
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🌐 Build & Deploy to GitHub Pages
+1. In `vite.config.js`, make sure base is:
+   ```js
+   base: '/suplements_store/',
+   ```
+2. Build and deploy:
+   ```sh
+   npm run build
+   npm run deploy
+   ```
+3. The site will be available at:
+   https://danielglopina.github.io/suplements_store/
+
+## 🧰 Technologies
+- ⚛️ React 19+
+- ⚡ Vite
+- 🎨 SCSS
+- 🚀 gh-pages
+
+---
+
+**Author:** Daniel Glopina
