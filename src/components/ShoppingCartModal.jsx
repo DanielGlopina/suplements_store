@@ -44,7 +44,7 @@ function ShoppingCartModal({
             onClick={handleCloseModal}
             aria-label="Close"
           >
-            <img src="icons/close-btn.svg" alt="close button" />
+            <img src="icons/close-btn.svg?v=1" alt="close button" />
           </button>
           <h3>Shopping Cart</h3>
           {cart.length === 0 ? (
@@ -108,7 +108,7 @@ function ShoppingCartModal({
               </div>
               <button type="button" className="add-cart-btn">
                 Proceed To Payment{" "}
-                <img src="public/icons/shopping-cart.svg" alt="shopping cart" />
+                <img src="icons/shopping-cart.svg" alt="shopping cart" />
               </button>
             </>
           )}

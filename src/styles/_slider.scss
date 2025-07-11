@@ -17,6 +17,9 @@
     display: none;
     margin: 0 auto;
     button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin: 0 auto;
       img {
         width: 25px;

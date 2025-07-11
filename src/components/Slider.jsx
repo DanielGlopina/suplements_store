@@ -82,7 +82,7 @@ function Slider({ slideIndex, setSlideIndex }) {
         </div>
       </div>
       <button type="button" onClick={handleNext}>
-        <img src="icons/arrow-forward.svg" alt="arrow forward" />
+        <img src="icons/arrow-forward.svg?v=1" alt="arrow forward" />
       </button>
     </section>
   );

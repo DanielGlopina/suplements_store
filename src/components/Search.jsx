@@ -79,21 +79,16 @@ function Search({
               onChange={(e) => setKeyword(e.target.value)}
             />
             <button type="button" onClick={() => searchProduct()}>
-              <img src="./public/icons/search-icon.svg" alt="search icon" />
+              <img src="icons/search-icon.svg" alt="search icon" />
             </button>
           </div>
           <button type="button" onClick={handleOpenShopCart}>
-            <img
-              src="./public/icons/shopping-cart.svg"
-              alt="shopping cart icon"
-            />
+            <img src="icons/shopping-cart.svg" alt="shopping cart icon" />
           </button>
         </div>
         <div
           ref={popupRef}
-          className={`popular-searches${
-            isHiddenSearchModal ? " hidden" : ""
-          }`}
+          className={`popular-searches${isHiddenSearchModal ? " hidden" : ""}`}
         >
           <ul>
             {popularKeywords.map((keyword) => (
