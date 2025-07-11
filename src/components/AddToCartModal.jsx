@@ -81,7 +81,7 @@ function AddToCartModal({
           </div>
           {/* Add to cart button */}
           <button className="add-cart-btn" onClick={add}>
-            Add To Cart <img src="public/icons/shopping-cart.svg" alt="cart" />
+            Add To Cart
           </button>
         </div>
       </div>
