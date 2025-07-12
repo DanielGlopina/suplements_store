@@ -1,6 +1,6 @@
-//Categories Elements Array Import
+// Categories Elements Array Import
 import categoriesElements from "../data/categoriesElements";
-//Product Cards Data Array Import
+// Product Cards Data Array Import
 import productCardsData from "../data/productsCardData";
 
 /**

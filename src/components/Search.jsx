@@ -25,7 +25,7 @@ function Search({
   setHiddenShopCart,
   setBlured,
 }) {
-  const popupRef = useRef(null);
+  // const popupRef = useRef(null);
 
   // Filter products by category keyword
   const searchProduct = (keyword = searchedKeyword) => {
@@ -44,11 +44,7 @@ function Search({
   };
 
   // Hide popup if focus leaves the search area
-  const handleBlur = (e) => {
-    if (popupRef.current && !popupRef.current.contains(e.relatedTarget)) {
-      setHidden(true);
-    }
-  };
+  const handleBlur = () => setHidden(true);
 
   // Open shopping cart modal and blur background
   const handleOpenShopCart = () => {
@@ -57,13 +53,13 @@ function Search({
   };
 
   // Popular search keywords
-  const popularKeywords = [
-    "Protein",
-    "Creatine",
-    "BCAA",
-    "Mass-Gainer",
-    "Collagen",
-  ];
+  // const popularKeywords = [
+  //   "Protein",
+  //   "Creatine",
+  //   "BCAA",
+  //   "Mass-Gainer",
+  //   "Collagen",
+  // ];
 
   return (
     <section className="search">
@@ -78,7 +74,14 @@ function Search({
               onBlur={handleBlur}
               onChange={(e) => setKeyword(e.target.value)}
             />
-            <button type="button" onClick={() => searchProduct()}>
+            <button type="button" onClick={() => {
+              searchProduct();
+              // Smooth scroll to products section
+              const productsSection = document.querySelector('.products-section');
+              if (productsSection) {
+                productsSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}>
               <img src="icons/search-icon.svg" alt="search icon" />
             </button>
           </div>
@@ -88,23 +91,6 @@ function Search({
               alt="shopping cart icon"
             />
           </button>
-        </div>
-        <div
-          ref={popupRef}
-          className={`popular-searches${isHiddenSearchModal ? " hidden" : ""}`}
-        >
-          <ul>
-            {popularKeywords.map((keyword) => (
-              <li key={keyword}>
-                <button
-                  type="button"
-                  onClick={() => handleKeywordChange(keyword)}
-                >
-                  {keyword}
-                </button>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </section>

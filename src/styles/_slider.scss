@@ -92,7 +92,7 @@
       display: block;
       position: relative;
       z-index: 2;
-      filter: drop-shadow(0 25px 12px rgba(255, 255, 255, 0.45));
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.25));
     }
     &::after {
       content: "";
@@ -101,9 +101,9 @@
       left: 10%;
       width: 80%;
       height: 20px;
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(0, 0, 0, 0.3);
       border-radius: 50%;
-      filter: blur(15px);
+      filter: blur(8px);
       z-index: 1;
       transform: translateX(0);
     }

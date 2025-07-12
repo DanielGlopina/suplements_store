@@ -110,6 +110,11 @@ function App() {
     (product, flavour, quantity) => {
       addToCart(product, flavour, quantity);
       showToast(`Added to cart: ${product.name} (${product.brand})`);
+      // Smooth scroll to search section
+      const searchSection = document.querySelector('.search');
+      if (searchSection) {
+        searchSection.scrollIntoView({ behavior: 'smooth' });
+      }
     },
     [addToCart, showToast]
   );
